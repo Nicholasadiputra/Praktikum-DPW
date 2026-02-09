@@ -13,6 +13,7 @@
 
 ## isi(landscape)
 -nama pasangan dari atas ke Bawah
+-nama orang tua dari setiap pasangan
 -pesan untuk mengundang orang
 -tanggal
 -rundown acara pernikahan (akad, resepsi)
@@ -26,6 +27,7 @@
 -pengguna melihat detail halaman depan yang utamanya melihat nama pasangan, tanggal dan tempat acara.
 -pengguna berpindah ke halaman isi yang berisi lebih detail.
 -(admin) dapat melakukan pengeditan halaman (seperti mengedit nama pasangan jika ingin dipakai ulang)
+
 
 
 
