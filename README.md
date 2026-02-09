@@ -20,5 +20,13 @@
 -pesan
 -lokasi denah acara (diletakan di bagian kanan mirip seperti sidebar)
 
+## WIREFLOW 
+-pengguna membuka website
+-pengguna melihat halaman depan surat undangan
+-pengguna melihat detail halaman depan yang utamanya melihat nama pasangan, tanggal dan tempat acara.
+-pengguna berpindah ke halaman isi yang berisi lebih detail.
+-(admin) dapat melakukan pengeditan halaman (seperti mengedit nama pasangan jika ingin dipakai ulang)
+
+
 
 
