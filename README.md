@@ -11,5 +11,17 @@ halaman depan
 -tempat 
 -pesan (reception to follow) (optional)
 
+-Nama mempelai
+-Orang tua
+-Nama mempelai
+-Orang tua
+-Kalimat
+-Waktu dan tanggal
+-waktu akad nikah
+-waktu resepsi nikah:
+-tempat
+-kalimat pentup
+-denah lokasi
+
 
 
