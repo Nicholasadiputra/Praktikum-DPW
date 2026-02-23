@@ -222,26 +222,28 @@ hr {
 /* ================= SECTION================= */
 .save-date {
   display: flex;
-  align-items: center;
   justify-content: space-between;
   background: #321E04;
-  padding: 80px 0 80px 80px;
+  align-items: stretch;
+  padding: 0; 
   gap: 60px;
 }
 
 /* LEFT */
 .left-content {
   position: relative;
-  width: 448px;
+  width: 50%;
+  padding: 80px; 
+  flex-shrink: 0;
 }
 
 /* CORNER */
 .corner-wrap {
-  position: relative;
-  width: 448px;
-  height: 454px; 
-  z-index: 1;
-  margin-top: 0px;
+  position: absolute;
+  top: 150px;
+  bottom: 150px;
+  right: 80px;
+  left: 80px;
 }
 
 /* SIKU */
@@ -261,10 +263,11 @@ hr {
 /* TEXT*/
 .text-wrap {
   position: absolute;
-  top: 40px;
-  left: 40px;
-  right: 40px;
-  bottom: 40px;
+  top: 80px;            
+  left: 80px;           
+  right: 80px;          
+  bottom: 80px;         
+  padding: 40px;
   z-index: 2;
   display: flex;
   flex-direction: column;
@@ -291,7 +294,7 @@ hr {
 .date-line {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: justify;
   margin: 20px 0;
 }
 
@@ -342,16 +345,21 @@ hr {
 
 /* ================= IMAGE ================= */
 .right-image {
+  width: 50%;
+  flex: 1;
   position: relative;
-  width: 476px;
-  height: 514px;
-  
+  align-self: stretch; 
+  overflow: hidden;
+  margin: 0;    
+  font-size: 0; 
+  line-height: 0;   
 }
 
 .right-image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  display: block; 
 }
 
 /* shadow smooth */
@@ -363,4 +371,247 @@ hr {
   width: 120px;
   height: 100%;
   background: linear-gradient(to right, #321E04, transparent);
+}
+
+
+/* ================= THE VENUE ================= */
+.venue-section { 
+  background: #fff; 
+  padding: 80px 80px 80px; 
+}
+
+.venue-top { 
+  display: flex; 
+  align-items: flex-start; 
+  gap: 48px; 
+  margin-bottom: 48px; 
+}
+
+.venue-photo { 
+  width: 250px; 
+  height: 326px; 
+  flex-shrink: 0; 
+  overflow: hidden; 
+  border-radius: 4px; 
+}
+
+.venue-photo img { 
+  width: 100%; 
+  height: 100%; 
+  object-fit: cover; 
+  display: block; 
+}
+
+.venue-text { 
+  flex: 1; 
+  display: flex; 
+  flex-direction: column; 
+  justify-content: center; 
+  padding-left: 20px;
+}
+
+.venue-title { 
+  font-family: 'Gilda Display', serif; 
+  font-size: 50px; 
+  font-weight: 700; 
+  letter-spacing: 0.10em; 
+  color: #321E04; 
+  line-height: 1; 
+  margin-bottom: 20px; 
+}
+
+.venue-desc { 
+  font-family: 'Jost', sans-serif; 
+  font-weight: 300; 
+  font-size: 15px; 
+  letter-spacing: 0.10em; 
+  color: #000; 
+  line-height: 1.75; 
+  margin-bottom: 28px; 
+}
+
+.venue-where { 
+  font-family: 'Jost', sans-serif; 
+  font-weight: 600; 
+  font-size: 15px; 
+  letter-spacing: 0.15em; 
+  text-transform: uppercase; 
+  color: #000; 
+  margin-bottom: 12px; 
+}
+
+.venue-address { 
+  font-family: 'Jost', sans-serif; 
+  font-weight: 300; 
+  font-size: 15px; 
+  letter-spacing: 0.15em; 
+  color: #000; 
+  line-height: 1.85; 
+  margin-bottom: 22px; 
+}
+
+.venue-save { 
+  font-family: 'Niconne', cursive; 
+  font-size: 30px; 
+  font-weight: 400; 
+  color: #321E04; 
+}
+
+.venue-map-wrap { 
+  width: 90%; 
+  border-radius: 6px; 
+  overflow: hidden; 
+  border: 1px solid #e0d8cc; 
+  line-height: 0; 
+  border: #321E04 solid 5px;
+  align-items: center;
+  margin: 0 auto 20px;
+}
+
+.venue-map-wrap iframe { 
+  display: block; 
+  width: 100%; 
+  height: 376px; 
+  border: none; 
+}
+
+.venue-maps-link { 
+  display: block; 
+  text-align: center; 
+  font-family: 'Jost', sans-serif; 
+  font-weight: 600; 
+  font-size: 15px; 
+  letter-spacing: 0.15em; 
+  text-transform: uppercase; 
+  color: #321E04; 
+  text-decoration: none; 
+  padding: 12px 0 4px; 
+}
+
+.venue-maps-link:hover { 
+  text-decoration: underline; 
+  text-underline-offset: 4px; 
+}
+
+/*================== COUNTDOWN ==================*/
+.countdown-section {
+  background: #321E04;
+  padding: 60px 40px 70px;
+  text-align: center;
+}
+
+.countdown-title {
+  font-family: 'Niconne', cursive;
+  font-size: 60px;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  color: #ffffff;
+  margin-bottom: 40px;
+  line-height: 1;
+}
+
+.countdown-wrap {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 0;
+}
+
+.countdown-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 140px;
+}
+
+.countdown-num {
+  font-family: 'Gilda Display', serif;
+  font-size: 80px;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  color: #ffffff;
+  line-height: 1;
+}
+
+.countdown-label {
+  font-family: 'Gilda Display', serif;
+  font-size: 25px;
+  font-weight: 400;
+  letter-spacing: 0.10em;
+  color: #ffffff;
+  margin-top: 10px;
+  line-height: 1;
+}
+
+/* Titik dua pemisah */
+.countdown-sep {
+  font-family: 'Gilda Display', serif;
+  font-size: 80px;
+  font-weight: 400;
+  color: #C9A96E;
+  line-height: 1;
+  padding: 0 4px;
+  align-self: flex-start;
+}
+
+/* =================== Our Timeline =================== */
+/* Path garis */
+#tl-path {
+  fill: none;
+  stroke: #321E04;
+  stroke-width: 2px;
+  opacity: 0.65;
+}
+
+/* ── Event group: hidden by default, muncul saat .visible ditambah JS ── */
+.ev-group {
+  opacity: 0;
+  transform-origin: center;
+  transform: scale(0.6);
+  transition: opacity 0.45s ease, transform 0.45s ease;
+}
+
+.ev-group.visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* ── "Our Timeline" title ── */
+#tl-title {
+  opacity: 0;
+  transition: opacity 0.8s ease;
+}
+
+#tl-title.visible {
+  opacity: 1;
+}
+
+/* ── SVG typography ── */
+.ev-heart {
+  font-family: serif;
+  font-size: 30px;
+  fill: #321E04;
+}
+
+.ev-time {
+  font-family: 'Jost', sans-serif;
+  font-weight: 400;
+  font-size: 13px;
+  fill: #321E04;
+  letter-spacing: 0.05em;
+}
+
+.ev-label {
+  font-family: 'Jost', sans-serif;
+  font-weight: 300;
+  font-size: 12px;
+  fill: #321E04;
+  letter-spacing: 0.05em;
+}
+
+.tl-heading {
+  font-family: 'Niconne', cursive;
+  font-size: 52px;
+  fill: #321E04;
+  letter-spacing: 0.05em;
 }

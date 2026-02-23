@@ -203,5 +203,90 @@
         </div>
     </section>
 
+    <!-- ════════════ TIMELINE SECTION ════════════ -->
+    <section class="w-full bg-[#f5f1eb] overflow-hidden leading-none">
+        <svg
+        id="tl-svg"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 1200 600"
+        width="100%"
+        preserveAspectRatio="xMidYMid meet"
+        class="block"
+        >
+        <!-- Garis path (dianimasikan via JS) -->
+        <path id="tl-path"
+            d="M 80,0
+            C 80,40   120,60   180,75
+            C 260,95  220,280  280,280
+            C 340,280 400,100  460,130
+            C 530,165 540,340  600,360
+            C 665,382 700,155  740,180
+            C 790,210 840,380  880,400
+            C 930,425 960,190  1000,220
+            C 1050,258 1060,460 1080,490
+            "
+        />
+    
+        <!-- P0: 09:00 Guest Arrival -->
+        <g class="ev-group" data-delay="200">
+            <text class="ev-heart" x="180" y="83"  text-anchor="middle">♥</text>
+            <text class="ev-time"  x="220" y="70"  text-anchor="start">09:00 AM</text>
+            <text class="ev-label" x="220" y="85"  text-anchor="start">Guest Arrival</text>
+        </g>
+    
+        <!-- P1: 10:00 Wedding Ceremony -->
+        <g class="ev-group" data-delay="580">
+            <text class="ev-heart" x="280" y="288" text-anchor="middle">♥</text>
+            <text class="ev-time"  x="226" y="280" text-anchor="end">10:00 AM</text>
+            <text class="ev-label" x="226" y="295" text-anchor="end">Wedding Ceremony</text>
+        </g>
+    
+        <!-- P2: 11:00 Vows & Ring Exchange -->
+        <g class="ev-group" data-delay="950">
+            <text class="ev-heart" x="450" y="137" text-anchor="middle">♥</text>
+            <text class="ev-time"  x="490" y="124" text-anchor="start">11:00 AM</text>
+            <text class="ev-label" x="490" y="139" text-anchor="start">Vows &amp; Ring Exchange</text>
+        </g>
+    
+        <!-- P3: 11:30 Official Declaration -->
+        <g class="ev-group" data-delay="1280">
+            <text class="ev-heart" x="610" y="370" text-anchor="middle">♥</text>
+            <text class="ev-time"  x="635" y="400" text-anchor="end">11:30 AM</text>
+            <text class="ev-label" x="660" y="415" text-anchor="end">Official Declaration</text>
+        </g>
+    
+        <!-- P4: 12:00 Photo Session -->
+        <g class="ev-group" data-delay="1580">
+            <text class="ev-heart" x="735" y="190" text-anchor="middle">♥</text>
+            <text class="ev-time"  x="775" y="174" text-anchor="start">12:00 PM</text>
+            <text class="ev-label" x="775" y="189" text-anchor="start">Photo Session</text>
+        </g>
+    
+        <!-- P5: 01:00 Lunch Reception -->
+        <g class="ev-group" data-delay="1880">
+            <text class="ev-heart" x="885" y="410" text-anchor="middle">♥</text>
+            <text class="ev-time"  x="845" y="400" text-anchor="end">01:00 PM</text>
+            <text class="ev-label" x="845" y="415" text-anchor="end">Lunch Reception</text>
+        </g>
+    
+        <!-- P6: 03:00 Dance -->
+        <g class="ev-group" data-delay="2150">
+            <text class="ev-heart" x="995" y="225" text-anchor="middle">♥</text>
+            <text class="ev-time"  x="1035" y="214" text-anchor="start">03:00 PM</text>
+            <text class="ev-label" x="1035" y="229" text-anchor="start">Dance</text>
+        </g>
+    
+        <!-- P7: 04:00 Closing & Farewell -->
+        <g class="ev-group" data-delay="2420">
+            <text class="ev-heart" x="1078" y="495" text-anchor="middle">♥</text>
+            <text class="ev-time"  x="1038" y="490" text-anchor="end">04:00 PM</text>
+            <text class="ev-label" x="1038" y="505" text-anchor="end">Closing &amp; Farewell</text>
+        </g>
+    
+        <!-- Our Timeline title -->
+        <text id="tl-title" class="tl-heading" x="60" y="500">Our Timeline</text>
+    
+        </svg>
+    </section>
 </body>
 </html>
