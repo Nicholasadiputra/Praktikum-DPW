@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Nicholas & Nahda – Wedding Invitation</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="landing.css"/>
+    <script src="landing.js" defer></script>
+</head>
+<body>
+<!-- HERO -->
+<section class="hero" id="top">
+    <div class="hero__bg-placeholder"></div>
+    <img class="hero__bg" src="foto1.jpg" alt="Nicholas & Nahda" onerror="this.style.display='none'"/>
+    <div class="hero__overlay"></div>
+    <div class="hero__content">
+        <div class="hero__names">
+        <span class="hero__name">Nicholas</span>
+        <span class="hero__amp">&amp;</span>
+        <span class="hero__name">Nahda</span>
+        </div>
+        <div class="hero__card">
+        <p class="hero__card-text">Together with our families, we invite you to<br>share in the joy of our wedding celebration.</p>
+        <p class="hero__card-to">to <strong>Tiara</strong></p>
+        </div>
+</div>
+</section>
+
+<!-- INVITATION -->
+<section class="invitation">
+    <div class="invitation__inner">
+        <div class="invitation__photo reveal">
+            <img src="foto2.jpg" alt="Couple" onerror="this.style.display='none';document.getElementById('pFallback').style.display='flex'"/>
+            <div class="invitation__photo-placeholder" id="pFallback" style="display:none;">foto2.jpg</div>
+        </div>
+
+        <div class="invitation__text">
+            <div class="inv-label reveal" style="transition-delay:.07s">Wedding Invitation</div>
+            <h2 class="inv-heading reveal" style="transition-delay:.13s">Hey Tiara</h2>
+            <p class="inv-body reveal" style="transition-delay:.19s">Welcome to our wedding invitation page. We would be honored to have your presence and blessings on our special day.</p>
+            <div class="inv-ornament reveal" style="transition-delay:.25s">
+                <span class="inv-ornament__dot"></span>
+                <span class="inv-ornament__line"></span>
+                <span class="inv-ornament__diamond">◆</span>
+                <span class="inv-ornament__line"></span>
+                <span class="inv-ornament__dot"></span>
+            </div>
+            <p class="inv-tagline reveal" style="transition-delay:.31s">Our Love Story Awaits</p>
+            <a href="#login" class="btn-login reveal" style="transition-delay:.37s">Login</a>
+        </div>
+    </div>
+</section>
+
+<!-- LOGIN -->
+<section class="login-section" id="login">
+    <div class="login__bg-placeholder"></div>
+    <img class="login__bg" src="foto3.jpg" alt="Wedding venue" onerror="this.style.display='none'"/>
+    <div class="login__overlay"></div>
+    <div class="login__glass">
+        <h2 class="login__title">Login</h2>
+        <div class="login__field">
+            <input class="login__input" type="text" id="inputUser" placeholder="User" autocomplete="username"/>
+        </div>
+        <div class="login__field">
+            <input class="login__input" type="password" id="inputPass" placeholder="Password" autocomplete="current-password"/>
+        </div>
+        <button class="login__btn" onclick="doLogin()">Login</button>
+    </div>
+</section>
+</body>
+</html>

@@ -1,29 +1,108 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel = "stylesheet" href = "style.css">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wedding</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;700&family=Jost:wght@400&family=La+Belle+Aurore&display=swap" rel="stylesheet">
+
+  <!-- Imperial Script (pakai CDN alternatif) -->
+  <link href="https://fonts.cdnfonts.com/css/imperial-script" rel="stylesheet">
+
+  <!-- Grey Qo -->
+  <link href="https://fonts.googleapis.com/css2?family=Caveat+Brush&family=Dancing+Script:wght@400;700&family=Eagle+Lake&family=Grey+Qo&family=Poppins:wght@400;600&family=Work+Sans:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- Jost -->
+  <link href = "https://fonts.googleapis.com/css2?family=Jost:wght@300;600&family=Gilda+Display&family=Niconne&display=swap" rel="stylesheet">
+  
+  <!-- Style CSS dan JavaScript -->
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
 <body>
-    <h1>Judul Halaman</h1>
-    <h2>Subjudul</h2>
-    <h3>Subbagian</h3>
-    <p>HTML adalah bahasa markup yang digunakan untuk menyusun struktur halaman web.</p>
-    <p>Paragraf ini menjelaskan fungsi dasar HTML dalam pengembangan web.</p>
-    <ol>
-        <li>Login</li>
-        <li>Registrasi</li>
-        <li>Dashboard</li>
-    </ol>
-    <!-- <a href="https://www.example.com">Kunjungi Website</a>
-    <img src="logo.png" alt="Logo Website"> -->
-    <form>
-        <label>Nama:</label>
-        <input type="text" name="nama">
-    </form>
 
+    <!-- Navbar -->
+    <header class="navbar">
+        <div class="logo">N</div>
+        <nav>
+        <a href="#">Home</a>
+        <a href="#">Mempelai</a>
+        <a href="#">Acara</a>
+        <a href="#">Galeri</a>
+        </nav>
+    </header>
 
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="overlay">
+        <h1 class="name-top">Nicholas</h1>
+        <div class="amp">&</div>
+        <h1 class="name-bottom">Nahda</h1>
+        </div>
+        <p class="date">SATURDAY — 2026 — DECEMBER</p>
+    </section>
+
+    <!--Greeting-->
+    <section class="greeting-section">
+        <!-- FOTO -->
+        <div class="image-stack">
+            <img src="images/foto1.png" class="img img1">
+            <img src="images/foto2.png" class="img img2">
+            <img src="images/foto3.png" class="img img3">
+        </div>
+        <!-- TEKS -->
+        <div class="text-content">
+            <p class="subtitle">THE BEGINNING OF OUR FOREVER</p>
+            <h2 class="title">
+            CELEBRATING LOVE, <br>
+            COMMITMENT, AND A BEAUTIFUL <br>
+            BEGINNING
+            </h2>
+            <p class="desc1">
+            With love and joy, we invite you to celebrate this special moment with us. With grateful hearts and joyful anticipation, we invite you to share in a moment that marks the beginning of a lifelong journey. Surrounded by love, family, and cherished friends, we celebrate not only a union of two souls, but the promise of a future filled with hope, laughter, and endless memories.
+            </p>
+            <hr>
+            <p class="names">Nicholas & Nahda</p>
+        </div>
+    </section>
+
+    <section class="save-date">
+        <!-- LEFT CONTENT -->
+        <div class="left-content">
+             <!-- SIKU -->
+            <div class="corner-wrap">
+                <div class="corner top-left"></div>
+                <div class="corner top-right"></div>
+                <div class="corner bottom-left"></div>
+                <div class="corner bottom-right"></div>
+            </div>
+           
+            <!-- TEKS -->
+            <div class="text-wrap">
+                <h2 class="saveTeks">SAVE</h2>
+                <p class="the">The</p>
+                <h2 class="dateTeks">DATE</h2>
+
+                <div class="date-line">
+                    <span class="line"></span>
+                    <div class="date-text">5
+                        <span class="sup">th</span>
+                        <span class="pipe">|</span>July
+                        <span class="pipe">|</span>2026
+                    </div>
+                    <span class="line"></span>
+                </div>
+                <p class="desc2">
+                    With hearts filled with happiness, we invite you to remember this special date and celebrate with us as we begin a new chapter of love and commitment.
+                </p>
+            </div>
+        </div>
+        <!-- RIGHT IMAGE -->
+        <div class="right-image">
+            <img src="images/foto4.png" alt="wedding">
+        </div>
+    </section>
 </body>
 </html>

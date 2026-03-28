@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Nicholas & Nahda – Dashboard</title>
+  <link rel="stylesheet" href="konten.css" />
+  <script src="konten.js" defer></script>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar">
+    <div class="nav-logo">NN</div>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#mempelai">Mempelai</a></li>
+      <li><a href="#acara">Acara</a></li>
+      <li><a href="#galeri">Galeri</a></li>
+      <li><a href="#rsvp" class="nav-btn">RSVP</a></li>
+    </ul>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero" id="home">
+    <div class="hero-overlay"></div>
+    <img src="foto1.jpg" alt="Hero Background" class="hero-bg" />
+    <div class="hero-content">
+      <p class="hero-sub">THE WEDDING OF</p>
+      <h1 class="hero-title">Nicholas<br/><span class="hero-amp">&amp;</span><br/>Nahda</h1>
+      <p class="hero-date">SATURDAY · 5TH · DECEMBER</p>
+    </div>
+  </section>
+
+  <!-- ===== BEGINNING SECTION ===== -->
+  <section class="beginning" id="mempelai">
+    <div class="beginning-grid">
+      <div class="beginning-imgs">
+        <img src="foto2.jpg" alt="Foto Couple 1" class="bimg bimg-top"/>
+        <img src="foto3.jpg" alt="Foto Couple 2" class="bimg bimg-bot"/>
+      </div>
+      <div class="beginning-text">
+        <p class="section-label">THE BEGINNING OF OUR FOREVER</p>
+        <h2 class="beginning-heading">Celebrating Love, Commitment, and a Beautiful Beginning</h2>
+        <p class="beginning-body">With grateful hearts and joyful anticipation, we invite you to share in a celebration of love, family, and the beginning of a lifelong journey. As two families come together, we hope this day will be filled with laughter, love, and memories that will last a lifetime.</p>
+        <p class="sig">Nicholas &amp; Nahda</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SAVE THE DATE ===== -->
+  <section class="save-date">
+    <div class="save-date-grid">
+      <div class="save-left">
+        <h2 class="save-title">SAVE<br/><em>the</em><br/>DATE</h2>
+        <div class="save-date-line">
+          <span class="date-num">05</span>
+          <div class="date-divider"></div>
+          <span class="date-month">DEC</span>
+          <div class="date-divider"></div>
+          <span class="date-year">2026</span>
+        </div>
+        <p class="save-body">We joyfully request the pleasure of your company as we celebrate the marriage of Nicholas and Nahda. Please mark your calendar for this special occasion.</p>
+      </div>
+      <div class="save-right">
+        <img src="foto4.jpg" alt="Save the Date" class="save-img"/>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== THE VENUE ===== -->
+  <section class="venue" id="acara">
+    <div class="venue-grid">
+      <div class="venue-img-wrap">
+        <img src="foto5.jpg" alt="Venue" class="venue-img"/>
+      </div>
+      <div class="venue-text">
+        <h2 class="venue-heading">THE VENUE</h2>
+        <p class="venue-body">We are delighted to invite you to a venue filled with luxury and elegance. Surrounded by nature, this venue is a dream come true.</p>
+        <p class="venue-label">WHERE OUR SPECIAL DAY TAKES PLACE</p>
+        <p class="venue-name">Wedding Ceremony<br/>Grand Ballroom, Jakarta</p>
+        <a href="#" class="venue-link"><em>Show Your Road</em> →</a>
+      </div>
+    </div>
+    <div class="map-container">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126932.56988596!2d106.7271!3d-6.2088!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f3e945e34b9d%3A0x5371bf0fdad786a2!2sJakarta%20Selatan!5e0!3m2!1sid!2sid!4v1690000000000!5m2!1sid!2sid"
+        width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy">
+      </iframe>
+      <p class="map-label">OPEN IN GOOGLE MAPS</p>
+    </div>
+  </section>
+
+  <!-- ===== COUNTDOWN ===== -->
+  <section class="countdown-section">
+    <p class="countdown-label">Until our wedding day</p>
+    <div class="countdown-timer">
+      <div class="cblock"><span id="days">118</span><small>Days</small></div>
+      <div class="csep">:</div>
+      <div class="cblock"><span id="hours">12</span><small>Hours</small></div>
+      <div class="csep">:</div>
+      <div class="cblock"><span id="minutes">54</span><small>Minutes</small></div>
+      <div class="csep">:</div>
+      <div class="cblock"><span id="seconds">05</span><small>Seconds</small></div>
+    </div>
+  </section>
+
+  <!-- ===== TIMELINE ===== -->
+  <section class="timeline-section">
+    <div class="timeline-wrap">
+      <div class="timeline-left">
+        <div class="tl-event tl-left">
+          <div class="tl-dot"></div>
+          <div class="tl-info">
+            <span class="tl-time">09:30 AM · Guest Arrival</span>
+          </div>
+        </div>
+        <div class="tl-event tl-left">
+          <div class="tl-dot"></div>
+          <div class="tl-info">
+            <span class="tl-time">10:30 AM · Ring &amp; Vow Exchange</span>
+          </div>
+        </div>
+        <div class="tl-event tl-left">
+          <div class="tl-dot"></div>
+          <div class="tl-info">
+            <span class="tl-time">10:08 PM · Photo Service</span>
+          </div>
+        </div>
+      </div>
+      <div class="tl-line-center">
+        <div class="tl-vert-line"></div>
+        <div class="tl-flower">✿</div>
+      </div>
+      <div class="timeline-right">
+        <div class="tl-event tl-right">
+          <div class="tl-dot"></div>
+          <div class="tl-info">
+            <span class="tl-time">11:00 AM · Official Declaration</span>
+          </div>
+        </div>
+        <div class="tl-event tl-right">
+          <div class="tl-dot"></div>
+          <div class="tl-info">
+            <span class="tl-time">01:30 PM · Family Reception</span>
+          </div>
+        </div>
+        <div class="tl-event tl-right">
+          <div class="tl-dot"></div>
+          <div class="tl-info">
+            <span class="tl-time">04:00 PM · Closing &amp; Farewell</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <h2 class="timeline-title">Our Timeline</h2>
+  </section>
+
+  <!-- ===== DRESS CODE ===== -->
+  <section class="dresscode">
+    <p class="dresscode-label">FORMAL ATTIRE / EVENING ATTIRE (DRESS CODE)</p>
+    <div class="dresscode-grid">
+      <div class="dresscode-img-group">
+        <img src="foto6.jpg" alt="Dress Code Wanita 1" class="dc-img"/>
+        <img src="foto7.jpg" alt="Dress Code Wanita 2" class="dc-img"/>
+        <img src="foto8.jpg" alt="Dress Code Pria 1" class="dc-img"/>
+        <img src="foto9.jpg" alt="Dress Code Pria 2" class="dc-img"/>
+      </div>
+      <div class="dresscode-text">
+        <h2 class="dc-title">Dress Code</h2>
+        <p class="dc-body">We kindly request that our guests dress in formal or evening attire. We encourage you to pick colors that complement our palette – earthy tones, champagne, ivory, and deep browns.</p>
+        <div class="dc-dots">
+          <span class="dot active"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== STORY OF US ===== -->
+  <section class="story" id="story">
+    <div class="story-grid">
+      <div class="story-text">
+        <h2 class="story-heading">STORY OF US</h2>
+        <h3 class="story-sub">HOW WE MET</h3>
+        <p class="story-body">Our story began in the most unexpected way — through a mutual connection during one of those warm, rainy evenings that make Jakarta feel magical. A shared laugh over something trivial turned into hours of conversation, and what followed was a friendship built on honesty, laughter, and understanding. We discovered a shared love for travel, good food, and quiet moments. Looking back, it feels like the universe had been quietly arranging this all along.</p>
+        <h3 class="story-sub">HOW WE PROPOSE</h3>
+        <p class="story-body">After two years of adventures and countless memories, the proposal came in the most intimate way — just the two of us, overlooking the sunset at our favourite place. With trembling hands and a full heart, the question was asked and answered with joyful tears. It was a moment frozen in time, a beginning wrapped in gratitude and love.</p>
+      </div>
+      <div class="story-imgs">
+        <img src="foto10.jpg" alt="Story 1" class="story-img story-img-top"/>
+        <img src="foto11.jpg" alt="Story 2" class="story-img story-img-bot"/>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== GALLERY ===== -->
+  <section class="gallery-section" id="galeri">
+    <h2 class="gallery-title">Gallery</h2>
+
+    <!-- Top row: 3 portrait cards -->
+    <div class="gallery-top-row">
+      <div class="gallery-card">
+        <img src="foto12.jpg" alt="Gallery 1"/>
+        <div class="gallery-card-caption">
+          <p class="gc-names">Mr. &amp; Mrs. —</p>
+          <p class="gc-role">PARENTS OF THE GROOM</p>
+        </div>
+      </div>
+      <div class="gallery-card gallery-card-center">
+        <img src="foto13.jpg" alt="Gallery 2"/>
+        <div class="gallery-card-caption">
+          <p class="gc-names">Mr. &amp; Mrs. —</p>
+          <p class="gc-role">PARENTS OF THE BRIDE</p>
+        </div>
+      </div>
+      <div class="gallery-card">
+        <img src="foto14.jpg" alt="Gallery 3"/>
+        <div class="gallery-card-caption">
+          <p class="gc-names">Mr. &amp; Mrs. —</p>
+          <p class="gc-role">WITNESSES</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Vertical scroll gallery -->
+    <div class="gallery-scroll-wrap">
+      <div class="gallery-scroll" id="galleryScroll">
+        <div class="gs-item"><img src="foto15.jpg" alt="Gallery 4"/></div>
+        <div class="gs-item"><img src="foto16.jpg" alt="Gallery 5"/></div>
+        <div class="gs-item"><img src="foto17.jpg" alt="Gallery 6"/></div>
+        <div class="gs-item"><img src="foto18.jpg" alt="Gallery 7"/></div>
+        <div class="gs-item"><img src="foto19.jpg" alt="Gallery 8"/></div>
+        <div class="gs-item"><img src="foto20.jpg" alt="Gallery 9"/></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== RSVP ===== -->
+  <section class="rsvp" id="rsvp">
+    <p class="rsvp-label">CONFIRMATION OF ATTENDANCE</p>
+    <h2 class="rsvp-heading">Will you join us?</h2>
+    <div class="rsvp-form">
+      <div class="rsvp-field">
+        <label>YOUR NAME</label>
+        <input type="text" placeholder="" />
+      </div>
+      <div class="rsvp-field">
+        <label>CONFIRM YOUR ATTENDANCE</label>
+        <div class="rsvp-choices">
+          <button class="rsvp-choice active" id="btnPresent">PRESENT</button>
+          <button class="rsvp-choice" id="btnAbsent">NOT PRESENT</button>
+        </div>
+      </div>
+      <div class="rsvp-field">
+        <label>CATEGORY</label>
+        <div class="rsvp-choices">
+          <button class="rsvp-choice" id="btnFamily">FAMILY</button>
+          <button class="rsvp-choice" id="btnFriends">FRIENDS</button>
+        </div>
+      </div>
+      <div class="rsvp-field">
+        <label>MESSAGE</label>
+        <textarea placeholder="Your message..."></textarea>
+      </div>
+      <button class="rsvp-submit">SEND CONFIRMATION</button>
+    </div>
+  </section>
+
+  <!-- ===== THANK YOU ===== -->
+  <section class="thankyou">
+    <div class="ty-grid">
+      <div class="ty-imgs">
+        <img src="foto21.jpg" alt="Thank You 1" class="ty-img"/>
+        <img src="foto22.jpg" alt="Thank You 2" class="ty-img ty-img-2"/>
+        <img src="foto23.jpg" alt="Thank You 3" class="ty-img"/>
+      </div>
+      <div class="ty-text">
+        <p class="ty-label">THANK YOU</p>
+        <p class="ty-body">THANK YOU FOR BEING PART OF OUR SPECIAL DAY.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="footer-logo">NN</div>
+    <p class="footer-text">© 2026 Nicholas &amp; Nahda · All rights reserved</p>
+    <p class="footer-text">Made with love for our wedding day</p>
+  </footer>
+
+  <script src="dashboard.js"></script>
+</body>
+</html>

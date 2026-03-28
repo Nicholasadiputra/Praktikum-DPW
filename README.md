@@ -3,7 +3,7 @@
 # referensi cover: https://pin.it/4lzVxOA2Q
 # isi : https://pin.it/75wRHdZ6Q
 
-halaman depan
+## halaman depan(portrait)
 -motto
 -nama pasangan dari atas ke Bawah
 -kata kata syukuran
