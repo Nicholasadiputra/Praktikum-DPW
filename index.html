@@ -20,6 +20,9 @@
   <!-- Great Vibes -->
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
 
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
 
@@ -598,5 +601,120 @@
 
         </form>
     </section>
+
+        <div class="bg-[#F8F8F8] flex items-center justify-center w-full py-4">
+            <div class="flex items-center gap-3">
+                <!-- titik kiri -->
+                <div class="w-1.5 h-1.5 rounded-full" style="background: #C9A96E;"></div>
+                <!-- garis kiri -->
+                <div style="width: 70px; height: 1px; background: #C9A96E;"></div>
+                <!-- diamond tengah -->
+                <div style="
+                    width: 10px;
+                    height: 10px;
+                    background: #C9A96E;
+                    transform: rotate(45deg);
+                    flex-shrink: 0;">
+                </div>
+                <!-- garis kanan -->
+                <div style="width: 70px; height: 1px; background: #C9A96E;"></div>
+                <!-- titik kanan -->
+                <div class="w-1.5 h-1.5 rounded-full" style="background: #C9A96E;"></div>
+            </div>
+        </div>
+
+    <!-- Section Thank You -->
+    <section class="bg-[#F8F8F8] flex items-center justify-center py-16 px-10">
+        <div class="flex items-end justify-center gap-0" style="max-width: 1200px; width: 100%;">
+
+            <!-- Foto -->
+            <div class="relative flex-shrink-0" style="width: 520px;">
+                <img src="images/story2.png" alt="Couple"
+                    class="w-full h-full object-cover block"
+                    style="box-shadow: 25px 25px 0px 0px #321E04; border-radius: 0px;">
+            </div>
+
+            <!-- Rectangle -->
+            <div class="flex flex-col justify-center px-14"
+                style="background: #D9CFC7; gap: 30px; height: 450px; flex: 1;">
+
+                <!-- Thank You label + line -->
+                <div class="flex items-center gap-4">
+                    <p class="font-jost font-semibold uppercase text-[#321E04]"
+                        style="font-size: 15px; letter-spacing: 0.25em; white-space: nowrap;">
+                        Thank You
+                    </p>
+                    <div style="width: 80px; height: 1px; background: #C9A96E; flex-shrink: 0;"></div>
+                </div>
+
+                <!-- Judul -->
+                <h2 class="font-gilda font-normal uppercase text-[#321E04]"
+                    style="font-size: 36px; line-height: 1.2;">
+                    Thank you for being part of our special day.
+                </h2>
+
+                <!-- Deskripsi -->
+                <p class="font-jost font-normal text-[#321E04]"
+                    style="font-size: 15px; letter-spacing: 0.10em; line-height: 1.8;">
+                    Thank you for your love, prayers, and warm wishes. Your presence means the world to us as we celebrate this beautiful beginning together.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="w-full px-16 py-10" style="background: #321E04;">
+        <div class="flex items-center justify-between">
+
+            <!-- Kiri: inisial + garis + teks -->
+            <div class="flex items-center gap-6">
+                <!-- Inisial -->
+                <span class="font-grey-qo text-white" style="font-size: 48px; line-height: 1;">N</span>
+
+                <!-- Garis vertikal -->
+                <div style="width: 1px; height: 70px; background: rgba(255,255,255,0.3); gap: 100px;"></div>
+
+                <!-- Teks -->
+                <div class="flex flex-col gap-1">
+                    <p class="font-jost font-normal text-white" style="font-size: 14px; letter-spacing: 0.1em;">
+                        A joyful celebration of love and togetherness
+                    </p>
+                    <p class="font-jost font-normal text-white" style="font-size: 14px; letter-spacing: 0.1em;">
+                        © 2026 Wedding Invitation
+                    </p>
+                    <p class="font-jost font-normal text-white" style="font-size: 14px; letter-spacing: 0.1em;">
+                        Made for love
+                    </p>
+                </div>
+            </div>
+
+            <!-- Kanan: ikon sosmed + contact us -->
+            <div class="flex flex-col items-center gap-3">
+                <!-- Ikon sosmed -->
+                <div class="flex items-center gap-4">
+                    <a href="#" class="text-white hover:opacity-70 transition-opacity">
+                        <i class="fab fa-instagram text-xl"></i>
+                    </a>
+                    <a href="#" class="text-white hover:opacity-70 transition-opacity">
+                        <i class="fab fa-x-twitter text-xl"></i>
+                    </a>
+                    <a href="#" class="text-white hover:opacity-70 transition-opacity">
+                        <i class="fab fa-tiktok text-xl"></i>
+                    </a>
+                    <a href="#" class="text-white hover:opacity-70 transition-opacity">
+                        <i class="fab fa-facebook text-xl"></i>
+                    </a>
+                    <a href="#" class="text-white hover:opacity-70 transition-opacity">
+                        <i class="fab fa-youtube text-xl"></i>
+                    </a>
+                </div>
+
+                <!-- Contact Us -->
+                <p class="font-jost font-semibold text-white uppercase"
+                    style="font-size: 13px; letter-spacing: 0.2em;">
+                    Contact Us
+                </p>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
