@@ -17,10 +17,10 @@
   <!-- Jost -->
   <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;600&family=Gilda+Display&family=Niconne&display=swap" rel="stylesheet">
 
-  <!-- ✅ Tailwind CSS CDN -->
+  <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- ✅ Tailwind Config: daftarkan warna & font custom -->
+  <!-- Tailwind Config: daftarkan warna & font custom -->
   <script>
     tailwind.config = {
       corePlugins: {
@@ -287,6 +287,162 @@
         <text id="tl-title" class="tl-heading" x="60" y="500">Our Timeline</text>
     
         </svg>
+    </section>
+
+    <!-- ════════════ Dress Code ════════════ -->
+    <section class="flex items-center justify-center min-h-screen">
+        <div style="position: relative; width: 1011px;">
+    
+            <!-- "Dress Code" title overlapping image zone and text panel -->
+            <div class="title-overlay">
+                <span class="dress-code-title">Dress Code</span>
+            </div>
+        
+            <div class="dress-layout">
+        
+                <!-- Image 1: Tall woman in brown suit -->
+                <div class="img-woman-tall">
+                    <div class="line-vertical"></div>
+                    <div class="line-horizontal"></div>
+                    <img src="images/woman1.png" alt="Woman in brown suit"
+                    />
+                </div>
+        
+                <!-- Image 2: Man in navy suit -->
+                <div class="img-man-navy">
+                    <img src="images/man1.png" alt="Man in navy suit"
+                    />
+                </div>
+        
+                <!-- Image 3: Woman in olive dress -->
+                <div class="img-woman-olive">
+                    <img src="images/woman2.png" alt="Woman in olive dress"
+                    />
+                </div>
+        
+                <!-- Text Panel with Image 4 at bottom -->
+                <div class="text-panel">
+                    <div class="text-content">
+                        <!-- Top label (above title area) -->
+                        <p class="formal-attire-label" style="margin-top: 4px;">Kindly Dress in Formal Attire</p>
+            
+                        <!-- Space for "Dress Code" title overlap (visual gap) -->
+                        <div style="height: 64px;"></div>
+            
+                        <!-- Description -->
+                        <p class="description-text" style="max-width: 390px;">
+                        To create a harmonious and elegant celebration, we kindly invite our guests to wear formal attire in the following color palette.
+                        </p>
+            
+                        <!-- Color Swatches -->
+                        <div class="palette-wrapper">
+                        <div class="swatch" style="background:#FFFFFF;"></div>
+                        <div class="swatch" style="background:#563E32;"></div>
+                        <div class="swatch" style="background:#5C5C38;"></div>
+                        <div class="swatch" style="background:#36161B;"></div>
+                        <div class="swatch" style="background:#151A20;"></div>
+                    </div>
+                </div>
+        
+                <!-- Image 4: Man in black suit -->
+                <div class="img-man-black">
+                    <img src="images/man2.png" alt="Man in black suit"
+                    />
+                </div>
+            </div>
+        </div>
+    </section
+
+    <section class="bg-[#f5f3ee] min-h-screen">
+    <div class="flex flex-row items-start gap-16 max-w-[860px] w-full mx-auto px-[60px] py-[80px]">
+            <!-- Left: Text -->
+            <div class="flex flex-col flex-1">
+
+                <!-- Title -->
+                <h1 class="font-gilda font-normal text-[#321E04] text-[50px] tracking-10 mb-[30px] leading-tight">
+                STORY OF US
+                </h1>
+
+                <!-- Block 1: How We Met -->
+                <div class="mb-[30px]">
+                <h2 class="font-jost font-normal uppercase text-[#321E04] text-[20px] tracking-15 text-center mb-[30px]">
+                    HOW WE MET
+                </h2>
+                <p class="font-jost font-light text-[#321E04] text-[15px] tracking-10 leading-relaxed text-center">
+                    Our story began in the most unexpected way — through a simple introduction during our university days. What started as a casual acquaintance slowly turned into a meaningful connection. Through shared conversations, laughter, and experiences, we discovered the comfort of having someone who understands and supports us along the way.
+                </p>
+                </div>
+
+                <!-- Block 2: How We Proposal -->
+                <div>
+                <h2 class="font-jost font-normal uppercase text-[#321E04] text-[20px] tracking-15 text-center mb-[30px]">
+                    HOW WE PROPOSAL
+                </h2>
+                <p class="font-jost font-light text-[#321E04] text-[15px] tracking-10 leading-relaxed text-center">
+                    As time passed, it became clear that our journey together was meant to last a lifetime. In a quiet and heartfelt moment, surrounded by warmth and happiness, the question was finally asked — a promise to continue this journey side by side, forever.
+                </p>
+                </div>
+
+            </div>
+
+            <!-- Right: Images -->
+            <div class="flex flex-col flex-shrink-0 gap-[30px]">
+                <div class="w-[275px] h-[275px] overflow-hidden">
+                <img src="images/story1.png" alt="Story 1" class="object-cover w-full h-full"/>
+                </div>
+                <div class="w-[275px] h-[275px] overflow-hidden">
+                <img src="images/story2.png" alt="Story 2" class="object-cover w-full h-full"/>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-[#3b1f08] min-h-screen flex flex-col items-center px-[60px] py-[60px]">
+        <!-- Gallery Title -->
+        <h1 class="font-niconne text-white text-[60px] font-normal tracking-5 mb-[50px]">
+        Gallery
+        </h1>
+    
+        <!-- Photos + Captions Row -->
+        <div class="flex flex-row items-end justify-center gap-[30px] w-full max-w-[900px]">
+            <!-- Group 1: Parents of the Groom -->
+            <div class="flex flex-col items-center gap-0">
+                <div class="flex flex-row gap-[20px] mb-[24px]">
+                <!-- Photo 1 -->
+                <div class="arch-wrapper">
+                    <img src="images/dad1.jpg" alt="Father of the Groom" />
+                </div>
+                <!-- Photo 2 -->
+                <div class="arch-wrapper">
+                    <img src="images/mom1.jpg" alt="Mother of the Groom" />
+                </div>
+                </div>
+                <!-- Caption -->
+                <div class="text-center">
+                <p class="font-jost font-normal text-white text-[24px] tracking-10">Mr. &amp; Mrs. —</p>
+                <p class="font-jost font-normal text-[#E0A96A] text-[18px] tracking-15 uppercase mt-[4px]">Parents of the Groom</p>
+                </div>
+            </div>
+        
+            <!-- Group 2: Parents of the Bride -->
+            <div class="flex flex-col items-center gap-0">
+                <div class="flex flex-row gap-[20px] mb-[24px]">
+                <!-- Photo 3 -->
+                <div class="arch-wrapper">
+                    <img src="images/dad2.jpg" alt="Father of the Bride" />
+                </div>
+                <!-- Photo 4 -->
+                <div class="arch-wrapper">
+                    <img src="images/mom2.jpg" alt="Mother of the Bride" />
+                </div>
+                </div>
+                <!-- Caption -->
+                <div class="text-center">
+                <p class="font-jost font-normal text-white text-[24px] tracking-10">Mr. &amp; Mrs. —</p>
+                <p class="font-jost font-normal text-[#E0A96A] text-[18px] tracking-15 uppercase mt-[4px]">Parents of the Bride</p>
+                </div>
+            </div>
+        </div>
     </section>
 </body>
 </html>
