@@ -62,150 +62,187 @@
 </head>
 <body>
 
-    <!-- Navbar -->
-    <header class="navbar">
-        <div class="logo">N</div>
-        <nav>
-        <a href="#">Home</a>
-        <a href="#">Mempelai</a>
-        <a href="#">Acara</a>
-        <a href="#">Galeri</a>
+    <header class="fixed top-0 left-1/2 -translate-x-1/2 w-full px-[70px] py-[10px] flex justify-between items-center z-[1000]"
+        style="backdrop-filter: blur(12px); background: rgba(255,255,255,0.2); box-shadow: 0 8px 20px rgba(0,0,0,0.1);">
+        <!-- Logo -->
+        <div class="font-['Grey_Qo'] text-[50px] font-extrabold text-[#321E04]"
+            style="text-shadow: 2px 2px 5px rgba(0,0,0,0.2);">
+            N
+        </div>
+        <!-- Nav -->
+        <nav class="flex gap-[70px]">
+            <a href="#home" class="no-underline text-[20px] text-[#321E04] font-['Cormorant_Garamond']">Home</a>
+            <a href="#mempelai" class="no-underline text-[20px] text-[#321E04] font-['Cormorant_Garamond']">Mempelai</a>
+            <a href="#acara" class="no-underline text-[20px] text-[#321E04] font-['Cormorant_Garamond']">Acara</a>
+            <a href="#galeri" class="no-underline text-[20px] text-[#321E04] font-['Cormorant_Garamond']">Galeri</a>
         </nav>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="overlay">
-        <h1 class="name-top">Nicholas</h1>
-        <div class="amp">&</div>
-        <h1 class="name-bottom">Nahda</h1>
-        </div>
-        <p class="date">SATURDAY — 2026 — DECEMBER</p>
-    </section>
-
-    <!--Greeting-->
-    <section class="greeting-section">
-        <!-- FOTO -->
-        <div class="image-stack">
-            <img src="images/foto1.png" class="img img1">
-            <img src="images/foto2.png" class="img img2">
-            <img src="images/foto3.png" class="img img3">
-        </div>
-        <!-- TEKS -->
-        <div class="text-content">
-            <p class="subtitle">THE BEGINNING OF OUR FOREVER</p>
-            <h2 class="title">
-            CELEBRATING LOVE, <br>
-            COMMITMENT, AND A BEAUTIFUL <br>
-            BEGINNING
-            </h2>
-            <p class="desc1">
-            With love and joy, we invite you to celebrate this special moment with us. With grateful hearts and joyful anticipation, we invite you to share in a moment that marks the beginning of a lifelong journey. Surrounded by love, family, and cherished friends, we celebrate not only a union of two souls, but the promise of a future filled with hope, laughter, and endless memories.
-            </p>
-            <hr>
-            <p class="names">Nicholas & Nahda</p>
-        </div>
-    </section>
-
-    <section class="save-date">
-        <!-- LEFT CONTENT -->
-        <div class="left-content">
-             <!-- SIKU -->
-            <div class="corner-wrap">
-                <div class="corner top-left"></div>
-                <div class="corner top-right"></div>
-                <div class="corner bottom-left"></div>
-                <div class="corner bottom-right"></div>
+    <section id="home" class="h-screen bg-[url('images/hero-bg.png')] bg-center bg-cover bg-no-repeat flex justify-center items-center">
+        <!-- Overlay Text -->
+        <div class="absolute top-[30%] left-[30%] flex flex-col text-white tracking-[0.2em]">
+            <h1 class="font-['La_Belle_Aurore'] text-[80px] font-bold text-white text-left"
+                style="text-shadow: 2px 2px 10px rgba(0,0,0,0.6);">
+                Nicholas
+            </h1>
+            <div class="font-['Imperial_Script'] text-[90px] font-bold text-white text-right -mt-[10px]">
+                &
             </div>
-           
-            <!-- TEKS -->
-            <div class="text-wrap">
-                <h2 class="saveTeks">SAVE</h2>
-                <p class="the">The</p>
-                <h2 class="dateTeks">DATE</h2>
+            <h1 class="font-['La_Belle_Aurore'] text-[80px] font-bold text-white text-right -mt-[10px] translate-x-1/2"
+                style="text-shadow: 2px 2px 10px rgba(0,0,0,0.6);">
+                Nahda
+            </h1>
+        </div>
 
-                <div class="date-line">
-                    <span class="line"></span>
-                    <div class="date-text">5
-                        <span class="sup">th</span>
-                        <span class="pipe">|</span>July
-                        <span class="pipe">|</span>2026
+        <!-- Date -->
+        <p class="absolute font-jost font-semibold text-white text-[16px] tracking-[0.25em] mt-[600px]">
+            SATURDAY — 2026 — DECEMBER
+        </p>
+    </section>
+
+    <section id="mempelai" class="font-jost flex items-center gap-[80px] px-[80px] pt-[80px] pb-[120px] bg-[#f5f1eb]">
+        <!-- FOTO -->
+        <div class="relative w-[300px] h-[460px] flex-shrink-0">
+            <img src="images/foto1.jpg" class="absolute object-cover border-[3px] border-white w-[255px] h-[357px] top-0 left-0 z-[1]">
+            <img src="images/foto2.jpg" class="absolute object-cover border-[3px] border-white w-[206px] h-[257px] top-[150px] left-[180px] z-[2]">
+            <img src="images/foto3.jpg" class="absolute object-cover border-[3px] border-white w-[206px] h-[206px] top-[300px] left-[80px] z-[3]">
+        </div>
+
+        <!-- TEKS -->
+        <div class="ml-[20%]">
+            <p class="text-[15px] font-semibold tracking-[0.15em] text-[#321E04] uppercase mb-[20px]">
+                THE BEGINNING OF OUR FOREVER
+            </p>
+            <h2 class="font-gilda text-[#321E04] text-[32px] font-normal uppercase mb-[20px]">
+                CELEBRATING LOVE, <br>
+                COMMITMENT, AND A BEAUTIFUL <br>
+                BEGINNING
+            </h2>
+            <p class="text-[15px] font-light tracking-[0.10em] text-[#321E04] mb-[30px]">
+                With love and joy, we invite you to celebrate this special moment with us. With grateful hearts and joyful anticipation, we invite you to share in a moment that marks the beginning of a lifelong journey. Surrounded by love, family, and cherished friends, we celebrate not only a union of two souls, but the promise of a future filled with hope, laughter, and endless memories.
+            </p>
+            <hr class="border-none h-[1px] bg-[#C9A96E] my-[20px]">
+            <p class="font-niconne text-[#321E04] text-[35px] tracking-[0.15em]">
+                Nicholas & Nahda
+            </p>
+        </div>
+    </section>
+
+    <section id="acara" class="flex justify-between bg-[#321E04] items-stretch gap-[60px]">
+        <!-- LEFT CONTENT -->
+        <div class="relative w-1/2 p-[80px] flex-shrink-0">
+
+            <!-- SIKU / CORNER -->
+            <div class="absolute top-[150px] bottom-[150px] left-[80px] right-[80px] z-[3]">
+                <div class="corner-tl"></div>
+                <div class="corner-tr"></div>
+                <div class="corner-bl"></div>
+                <div class="corner-br"></div>
+            </div>
+
+            <!-- TEXT WRAP -->
+            <div class="absolute top-[80px] left-[80px] right-[80px] bottom-[80px] p-[40px] z-[2] flex flex-col justify-center text-justify">
+                <h2 class="font-gilda text-white text-[50px] tracking-[0.1em]">SAVE</h2>
+                <p class="font-niconne text-[#C9A96E] text-[40px] my-[10px]">The</p>
+                <h2 class="font-gilda text-white text-[50px] tracking-[0.1em]">DATE</h2>
+
+                <!-- Date Line -->
+                <div class="flex flex-col my-[20px]">
+                    <span class="w-full h-[1px] mb-[10px]" style="background: linear-gradient(to right, #C9A96E, #7A5C3A);"></span>
+                    <div class="font-[Cormorant_Garamond] text-white text-[25px] inline-block">
+                        5<span class="text-[15px] align-super">th</span>
+                        <span class="mx-[32px]">|</span>July
+                        <span class="mx-[32px]">|</span>2026
                     </div>
-                    <span class="line"></span>
+                    <span class="w-full h-[1px] mt-[10px]" style="background: linear-gradient(to right, #C9A96E, #7A5C3A);"></span>
                 </div>
-                <p class="desc2">
+
+                <p class="font-jost font-light text-white text-[15px] tracking-[0.1em] mt-[20px]">
                     With hearts filled with happiness, we invite you to remember this special date and celebrate with us as we begin a new chapter of love and commitment.
                 </p>
             </div>
         </div>
+
         <!-- RIGHT IMAGE -->
-        <div class="right-image">
-            <img src="images/foto4.png" alt="wedding">
+        <div class="w-1/2 flex-1 relative self-stretch overflow-hidden m-0 text-[0] leading-[0]">
+            <img src="images/foto4.jpg" alt="wedding" class="w-full h-full object-cover block"/>
+            <!-- Shadow overlay -->
+            <div class="absolute left-[-60px] top-0 w-[120px] h-full"
+                style="background: linear-gradient(to right, #321E04, transparent);"></div>
         </div>
     </section>
 
-    <section class="venue-section">
-        <div class="venue-top">
-            <!-- Foto 230x306 -->
-            <div class="venue-photo">
-            <img src="images/foto5.png" alt="Couple"/>
+    <section class="bg-white px-[80px] py-[80px]">
+        <div class="flex items-start gap-[48px] mb-[48px]">
+            <!-- Foto -->
+            <div class="w-[250px] h-[326px] flex-shrink-0 overflow-hidden rounded-[4px]">
+                <img src="images/foto5.jpg" alt="Couple" class="w-full h-full object-cover block"/>
             </div>
             <!-- Teks -->
-            <div class="venue-text">
-                <h2 class="venue-title">THE VENUE</h2>
-                <p class="venue-desc">
+            <div class="flex-1 flex flex-col justify-center pl-[20px]">
+                <h2 class="font-gilda text-[#321E04] text-[50px] font-bold tracking-[0.10em] leading-none mb-[20px]">
+                    THE VENUE
+                </h2>
+                <p class="font-jost font-light text-black text-[15px] tracking-[0.10em] leading-[1.75] mb-[28px]">
                     We are delighted to celebrate our special day at a place filled with
                     beauty and warmth. Surrounded by nature and loved ones, this venue
                     will witness the beginning of our forever.
                 </p>
-                <p class="venue-where">Where Our Special Day Takes Place</p>
-                <p class="venue-address">
+                <p class="font-jost font-semibold text-black text-[15px] tracking-[0.15em] uppercase mb-[12px]">
+                    Where Our Special Day Takes Place
+                </p>
+                <p class="font-jost font-light text-black text-[15px] tracking-[0.15em] leading-[1.85] mb-[22px]">
                     Wedding Ceremony<br>
                     Grand Ballroom, Ciputra's Hotel<br>
                     Jakarta, Indonesia
                 </p>
-                <p class="venue-save">Save Your Seat</p>
+                <p class="font-niconne text-[#321E04] text-[30px] font-normal">
+                    Save Your Seat
+                </p>
             </div>
         </div>
 
         <!-- Map embed -->
-        <div class="venue-map-wrap">
+        <div class="w-[90%] mx-auto overflow-hidden rounded-[6px] mb-[20px] leading-[0]" style="border: 5px solid #321E04;">
             <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.3!2d106.7902!3d-6.1752!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f6e0b4a4f5f5%3A0x1234567890abcdef!2sGrand%20Ballroom%20Ciputra%20Hotel%20Jakarta!5e0!3m2!1sen!2sid!4v1234567890"
-            allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.3!2d106.7902!3d-6.1752!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f6e0b4a4f5f5%3A0x1234567890abcdef!2sGrand%20Ballroom%20Ciputra%20Hotel%20Jakarta!5e0!3m2!1sen!2sid!4v1234567890"
+                class="block w-full h-[376px] border-none"
+                allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
             </iframe>
         </div>
 
         <!-- Link -->
-        <a class="venue-maps-link"
-            href="https://maps.google.com/?q=Grand+Ballroom+Ciputra+Hotel+Jakarta"
-            target="_blank" rel="noopener noreferrer">
+        <a href="https://maps.google.com/?q=Grand+Ballroom+Ciputra+Hotel+Jakarta"
+            target="_blank" rel="noopener noreferrer"
+            class="block text-center font-jost font-semibold text-[#321E04] text-[15px] tracking-[0.15em] uppercase no-underline pt-[12px] pb-[4px] hover:underline underline-offset-4">
             Open on Google Maps
         </a>
     </section>
 
-    <section class="countdown-section">
-        <p class="countdown-title">Until our wedding day</p>
+    <section class="bg-[#321E04] px-[40px] pt-[60px] pb-[70px] text-center">
+        <p class="font-niconne text-white text-[60px] font-normal tracking-[0.05em] mb-[40px] leading-none">
+            Until our wedding day
+        </p>
 
-        <div class="countdown-wrap">
-            <div class="countdown-item">
-            <span class="countdown-num" id="cd-days">000</span>
-            <span class="countdown-label">Days</span>
+        <div class="flex items-start justify-center">
+            <div class="flex flex-col items-center min-w-[140px]">
+                <span class="font-gilda text-white text-[80px] font-normal tracking-[0.05em] leading-none" id="cd-days">000</span>
+                <span class="font-gilda text-white text-[25px] font-normal tracking-[0.10em] mt-[10px] leading-none">Days</span>
             </div>
-            <span class="countdown-sep">:</span>
-            <div class="countdown-item">
-            <span class="countdown-num" id="cd-hours">00</span>
-            <span class="countdown-label">Hours</span>
+            <span class="font-gilda text-[#C9A96E] text-[80px] font-normal leading-none px-[4px] self-start">:</span>
+            <div class="flex flex-col items-center min-w-[140px]">
+                <span class="font-gilda text-white text-[80px] font-normal tracking-[0.05em] leading-none" id="cd-hours">00</span>
+                <span class="font-gilda text-white text-[25px] font-normal tracking-[0.10em] mt-[10px] leading-none">Hours</span>
             </div>
-            <span class="countdown-sep">:</span>
-            <div class="countdown-item">
-            <span class="countdown-num" id="cd-minutes">00</span>
-            <span class="countdown-label">Minutes</span>
+            <span class="font-gilda text-[#C9A96E] text-[80px] font-normal leading-none px-[4px] self-start">:</span>
+            <div class="flex flex-col items-center min-w-[140px]">
+                <span class="font-gilda text-white text-[80px] font-normal tracking-[0.05em] leading-none" id="cd-minutes">00</span>
+                <span class="font-gilda text-white text-[25px] font-normal tracking-[0.10em] mt-[10px] leading-none">Minutes</span>
             </div>
-            <span class="countdown-sep">:</span>
-            <div class="countdown-item">
-            <span class="countdown-num" id="cd-seconds">00</span>
-            <span class="countdown-label">Seconds</span>
+            <span class="font-gilda text-[#C9A96E] text-[80px] font-normal leading-none px-[4px] self-start">:</span>
+            <div class="flex flex-col items-center min-w-[140px]">
+                <span class="font-gilda text-white text-[80px] font-normal tracking-[0.05em] leading-none" id="cd-seconds">00</span>
+                <span class="font-gilda text-white text-[25px] font-normal tracking-[0.10em] mt-[10px] leading-none">Seconds</span>
             </div>
         </div>
     </section>
@@ -296,48 +333,42 @@
         </svg>
     </section>
 
-    <section class="relative w-full h-screen overflow-hidden" style="display:grid; grid-template-columns:320px 220px 1fr; grid-template-rows:50vh 50vh; gap:2px; background:#FFFFFF;">
+    <section id="galeri" class="relative w-full h-screen overflow-hidden"
+        style="display:grid; grid-template-columns:320px 220px 1fr; grid-template-rows:50vh 50vh; gap:2px; background:#FFFFFF;">
+
         <!-- woman1: full height (2 rows) -->
         <div class="relative overflow-hidden" style="grid-column:1; grid-row:1/3;">
-            
-            <!-- garis vertikal: 40px dari kiri -->
-            <div class="absolute top-0 bottom-0 w-px bg-white/40 z-10" style="left:40px; background: #FFFFFF;"></div>
-            
-            <!-- garis horizontal: tebal sama dengan gap grid (2px), di tengah -->
+            <div class="absolute top-0 bottom-0 w-px z-10" style="left:40px; background:#FFFFFF;"></div>
             <div class="absolute inset-x-0 z-10" style="top:50%; height:2px; background:#FFFFFF;"></div>
-            
-            <img src="images/woman1.png" class="w-full h-full object-cover"/>
+            <img src="images/woman1.jpg" class="w-full h-full object-cover"/>
         </div>
 
         <!-- man1: row 1, col 2 -->
         <div class="overflow-hidden" style="grid-column:2; grid-row:1;">
-            <img src="images/man1.png" class="w-full h-full object-cover"/>
+            <img src="images/man1.jpg" class="w-full h-full object-cover"/>
         </div>
 
         <!-- text panel: row 1, col 3 -->
-        <div class="flex flex-col justify-start relative overflow-hidden"
-            style="grid-column:3; grid-row:1; background:#3B2710; padding: 5vh 3vw;">
+        <div class="flex flex-col justify-start relative overflow-hidden bg-[#3B2710]"
+            style="grid-column:3; grid-row:1; padding:5vh 3vw;">
 
-            <!-- Kindly label -->
-            <p class="formal-attire-label"
-                style="color: #7A5C3A;">
+            <p class="font-jost font-semibold text-[#7A5C3A] text-[15px] tracking-[0.15em] uppercase">
                 Kindly Dress in Formal Attire
             </p>
 
-            <!-- Dress Code title — tepat di bawah label, bukan absolute -->
-            <span style="font-family: 'Great Vibes', cursive; font-size: clamp(40px, 4.5vw, 80px); letter-spacing: 0.05em; font-weight: 300; color: #F5ECD7; margin-top: 1rem; display: block;">
+            <span class="font-['Great_Vibes'] font-light text-[#F5ECD7] tracking-[0.05em] mt-4 block"
+                style="font-size: clamp(40px, 4.5vw, 80px);">
                 Dress Code
             </span>
 
-            <!-- Deskripsi -->
-            <p class="description-text"
-                style="max-width: 100%; margin-top: 1rem; margin-bottom: 1.75rem; font-size: clamp(14px, 2.5vw, 20px);">
+            <p class="font-jost font-light text-white tracking-[0.10em] leading-[1.7] mt-4 mb-7 w-full"
+            style="font-size: clamp(14px, 2.5vw, 20px);">
                 To create a harmonious and elegant celebration, we kindly invite our
                 guests to wear formal attire in the following color palette.
             </p>
 
             <!-- Palette -->
-            <div class="flex gap-3 justify-center"  style="max-width: 100%;">
+            <div class="flex gap-3 justify-center">
                 <div class="w-[22px] h-[22px] rounded-[4px] p-[1.5px]" style="background: linear-gradient(135deg, #F5D6AD, #8F7D65);">
                     <div class="w-full h-full rounded-[3px]" style="background:#FFFFFF;"></div>
                 </div>
@@ -356,14 +387,14 @@
             </div>
         </div>
 
-        <!-- woman2: row 2, col 2 — tepat di bawah man1 -->
+        <!-- woman2: row 2, col 2 -->
         <div class="overflow-hidden" style="grid-column:2; grid-row:2;">
-            <img src="images/woman2.png" class="w-full h-full object-cover"/>
+            <img src="images/woman2.jpg" class="w-full h-full object-cover"/>
         </div>
 
-        <!-- man2: row 2, col 3 — lebar mengisi sisa -->
+        <!-- man2: row 2, col 3 -->
         <div class="overflow-hidden" style="grid-column:3; grid-row:2;">
-            <img src="images/man2.png" class="w-full h-full object-cover object-top"/>
+            <img src="images/man2.jpg" class="w-full h-full object-cover object-top"/>
         </div>
     </section>
 
@@ -402,10 +433,10 @@
             <!-- Right: Images -->
             <div class="flex flex-col flex-shrink-0 gap-[30px]">
                 <div class="w-[275px] h-[275px] overflow-hidden">
-                <img src="images/story1.png" alt="Story 1" class="object-cover w-full h-full"/>
+                <img src="images/story1.jpg" alt="Story 1" class="object-cover w-full h-full"/>
                 </div>
                 <div class="w-[275px] h-[275px] overflow-hidden">
-                <img src="images/story2.png" alt="Story 2" class="object-cover w-full h-full"/>
+                <img src="images/story2.jpg" alt="Story 2" class="object-cover w-full h-full"/>
                 </div>
             </div>
         </div>
@@ -470,19 +501,19 @@
             <div class="relative z-0 w-full overflow-x-auto overflow-y-hidden py-8 px-6">
                 <div class="flex gap-4" style="width: max-content;">
                     <div style="width:220px; height:320px; flex-shrink:0; overflow:hidden;">
-                        <img src="images/foto1.png" class="w-full h-full object-cover"/>
+                        <img src="images/foto1.jpg" class="w-full h-full object-cover"/>
                     </div>
                     <div style="width:220px; height:320px; flex-shrink:0; overflow:hidden;">
-                        <img src="images/foto2.png" class="w-full h-full object-cover"/>
+                        <img src="images/foto2.jpg" class="w-full h-full object-cover"/>
                     </div>
                     <div style="width:220px; height:320px; flex-shrink:0; overflow:hidden;">
-                        <img src="images/foto5.png" class="w-full h-full object-cover"/>
+                        <img src="images/foto5.jpg" class="w-full h-full object-cover"/>
                     </div>
                     <div style="width:220px; height:320px; flex-shrink:0; overflow:hidden;">
-                        <img src="images/story1.png" class="w-full h-full object-cover"/>
+                        <img src="images/story1.jpg" class="w-full h-full object-cover"/>
                     </div>
                     <div style="width:220px; height:320px; flex-shrink:0; overflow:hidden;">
-                        <img src="images/story2.png" class="w-full h-full object-cover"/>
+                        <img src="images/story2.jpg" class="w-full h-full object-cover"/>
                     </div>
                     <div style="width:220px; height:320px; flex-shrink:0; overflow:hidden;">
                         <img src="images/dad1.jpg" class="w-full h-full object-cover"/>
@@ -629,7 +660,7 @@
 
             <!-- Foto -->
             <div class="relative flex-shrink-0" style="width: 520px;">
-                <img src="images/story2.png" alt="Couple"
+                <img src="images/story2.jpg" alt="Couple"
                     class="w-full h-full object-cover block"
                     style="box-shadow: 25px 25px 0px 0px #321E04; border-radius: 0px;">
             </div>
