@@ -74,4 +74,59 @@ events.forEach(ev => {
  
 // ── Munculkan title terakhir ──
 setTimeout(() => title.classList.add('visible'), 2750);
+function selectAttendance(val, el) {
+  document.getElementById('attendance-val').value = val;
+  document.querySelectorAll('.attendance-btn').forEach(b => {
+      b.classList.remove('ring-2', 'ring-[#321E04]');
+  });
+  el.classList.add('ring-2', 'ring-[#321E04]');
+}
 
+function selectCategory(val, el) {
+  document.getElementById('category-val').value = val;
+  document.querySelectorAll('.category-btn').forEach(b => {
+      b.classList.remove('bg-[#8F7D65]/40', 'text-white');
+  });
+  el.classList.add('bg-[#8F7D65]/40');
+}
+
+document.getElementById('rsvp-form').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const status = document.getElementById('form-status');
+
+    const nama      = this.name.value.trim();
+    const attendance = document.getElementById('attendance-val').value;
+    const category  = document.getElementById('category-val').value;
+    const message   = this.message.value.trim();
+
+    if (!nama || !attendance || !category) {
+        status.textContent = 'Mohon lengkapi semua field.';
+        status.className = 'text-center text-sm font-jost text-red-600';
+        status.classList.remove('hidden');
+        return;
+    }
+
+    // Ambil data tamu yang sudah ada
+    const existing = JSON.parse(localStorage.getItem('tamus') || '[]');
+    const nextId   = existing.length ? Math.max(...existing.map(t => t.id)) + 1 : 1;
+
+    // Sesuaikan format dengan admin
+    const newTamu = {
+        id:        nextId,
+        nama:      nama,
+        kategori:  category === 'family' ? 'Keluarga' : 'Teman',
+        pax:       null,
+        status:    attendance === 'present' ? 'Hadir' : 'Tidak Hadir',
+        ucapan:    message
+    };
+
+    existing.push(newTamu);
+    localStorage.setItem('tamus', JSON.stringify(existing));
+
+    status.textContent = 'Terima kasih! Konfirmasi kamu sudah terkirim.';
+    status.className = 'text-center text-sm font-jost text-green-700';
+    status.classList.remove('hidden');
+    this.reset();
+    document.getElementById('attendance-val').value = '';
+    document.getElementById('category-val').value   = '';
+});

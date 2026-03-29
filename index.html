@@ -17,6 +17,9 @@
   <!-- Jost -->
   <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;600&family=Gilda+Display&family=Niconne&display=swap" rel="stylesheet">
 
+  <!-- Great Vibes -->
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
 
@@ -43,6 +46,7 @@
             'grey-qo':    ['"Grey Qo"', 'cursive'],
             'gilda':      ['"Gilda Display"', 'serif'],
             'niconne':    ['Niconne', 'cursive'],
+            'greatvibes': ['"Great Vibes"', 'cursive'],
           },
         }
       }
@@ -318,13 +322,13 @@
             </p>
 
             <!-- Dress Code title — tepat di bawah label, bukan absolute -->
-            <span style="font-family:'Niconne', cursive; font-size: clamp(40px, 4.5vw, 80px); letter-spacing: 0.05em; font-weight: 300; color: #F5ECD7; margin-top: 0.5rem; display: block;">
+            <span style="font-family: 'Great Vibes', cursive; font-size: clamp(40px, 4.5vw, 80px); letter-spacing: 0.05em; font-weight: 300; color: #F5ECD7; margin-top: 1rem; display: block;">
                 Dress Code
             </span>
 
             <!-- Deskripsi -->
             <p class="description-text"
-                style="max-width: 100%; margin-top: 1.5rem; margin-bottom: 1.75rem; font-size: clamp(14px, 2.5vw, 20px);">
+                style="max-width: 100%; margin-top: 1rem; margin-bottom: 1.75rem; font-size: clamp(14px, 2.5vw, 20px);">
                 To create a harmonious and elegant celebration, we kindly invite our
                 guests to wear formal attire in the following color palette.
             </p>
@@ -497,5 +501,102 @@
                 style="width:100%; height:18%; background:#321E04; border-radius:50% 50% 0 0; bottom:0;">
             </div>
         </div>
+
+    <!-- RSVP Section -->
+    <section class="bg-[#F8F8F8] flex flex-col items-center px-[60px] py-[60px]">
+        <!-- Label atas -->
+        <p class="font-jost font-semibold text-[#321E04] text-[20px] tracking-[0.15em] uppercase mb-3">
+            Confirmation of Attendance
+        </p>
+
+        <!-- Judul -->
+        <h1 class="font-greatvibes font-normal text-[#321E04] text-[70px] tracking-[0.20em] mb-10">
+            Will you join us?
+        </h1>
+
+        <!-- Form -->
+        <form id="rsvp-form" class="w-full max-w-[640px] flex flex-col gap-6">
+            <!-- Your Name -->
+            <div class="flex flex-col gap-2">
+                <label class="font-jost font-semibold text-[#321E04] text-[18px] tracking-[0.25em] uppercase">
+                    Your Name
+                </label>
+                <div style="background: linear-gradient(135deg, #8F7D65, #635336); padding: 1px; border-radius: 10px;">
+                    <input
+                        type="text"
+                        name="name"
+                        placeholder="Enter your name"
+                        required
+                        class="w-full px-5 py-4 text-[#321E04] placeholder-[#9e8e7a] outline-none"
+                        style="font-family: 'Roboto', sans-serif;background: #ffffff; border-radius: 9px; border: none; width: 100%; letter-spacing: 0.1em;">
+                </div>
+            </div>
+            <!-- Confirm Attendance -->
+            <div class="flex flex-col gap-2">
+                <label class="font-jost font-semibold text-[#321E04] text-[18px] tracking-[0.25em] uppercase">
+                    Confirm Your Attendance
+                </label>
+                <div class="flex gap-4">
+                    <!-- PRESENT: border only -->
+                    <button type="button" onclick="selectAttendance('present', this)"
+                        class="attendance-btn flex-1 py-4 font-jost font-normal text-[#321E04] text-[14px] tracking-[0.15em] uppercase rounded-md border border-[#8F7D65] bg-transparent transition-all duration-300 hover:bg-green-500">
+                        Present
+                    </button>
+                    <!-- NOT PRESENT: fill merah -->
+                    <button type="button" onclick="selectAttendance('not_present', this)"
+                        class="attendance-btn flex-1 py-4 font-jost font-normal text-white text-[14px] tracking-[0.15em] uppercase rounded-md border border-red-700 bg-red-700 transition-all duration-300 hover:bg-red-800">
+                        Not Present
+                    </button>
+                </div>
+                <input type="hidden" name="attendance" id="attendance-val">
+            </div>
+
+            <!-- Category -->
+            <div class="flex flex-col gap-2">
+                <label class="font-jost font-semibold text-[#321E04] text-[18px] tracking-[0.25em] uppercase">
+                    Category
+                </label>
+                <div class="flex gap-4">
+                    <!-- FAMILY -->
+                    <button type="button" onclick="selectCategory('family', this)"
+                        class="category-btn flex-1 py-4 font-jost font-normal text-[#321E04] text-[14px] tracking-[0.15em] uppercase rounded-md border border-[#8F7D65] bg-transparent transition-all duration-300 hover:bg-[#8F7D65]/20">
+                        Family
+                    </button>
+                    <!-- FRIENDS -->
+                    <button type="button" onclick="selectCategory('friends', this)"
+                        class="category-btn flex-1 py-4 font-jost font-normal text-[#321E04] text-[14px] tracking-[0.15em] uppercase rounded-md border border-[#8F7D65] bg-transparent transition-all duration-300 hover:bg-[#8F7D65]/20">
+                        Friends
+                    </button>
+                </div>
+                <input type="hidden" name="category" id="category-val">
+            </div>
+
+            <!-- Message -->
+            <div class="flex flex-col gap-2">
+                <label class="font-jost font-semibold text-[#321E04] text-[18px] tracking-[0.25em] uppercase">
+                    Message
+                </label>
+                <!-- wrapper jadi "border" gradien -->
+                <div style="background: linear-gradient(135deg, #8F7D65, #635336); padding: 1px; border-radius: 10px;">
+                    <textarea
+                        name="message"
+                        placeholder="Enter your messages"
+                        rows="3"
+                        class="w-full px-5 py-4 text-[#321E04] placeholder-[#9e8e7a] outline-none resize-none"
+                        style="font-family: 'Roboto', sans-serif; background:#ffffff; border-radius: 9px; border: none; width: 100%; display: block; letter-spacing: 0.1em;"></textarea>
+                </div>
+            </div>
+
+            <!-- Send Confirmation -->
+            <button type="submit"
+                class="w-full py-5 font-jost font-normal text-[#321E04] text-[14px] tracking-[0.15em] uppercase rounded-md border border-[#8F7D65] bg-transparent transition-all duration-300 hover:bg-[#321E04] hover:text-white hover:border-[#321E04]">
+                Send Confirmation
+            </button>
+
+            <!-- Status message -->
+            <p id="form-status" class="text-center text-sm font-jost hidden"></p>
+
+        </form>
+    </section>
 </body>
 </html>

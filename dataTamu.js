@@ -1,23 +1,26 @@
   /* ── DATA ── */
-  let tamus = [
-    { id:1, nama:'Andi',  kategori:'Keluarga', pax:4, status:'Hadir',        ucapan:'Selamat Ya' },
-    { id:2, nama:'Budi',  kategori:'Keluarga', pax:4, status:'Hadir',        ucapan:'Selamat Ya' },
-    { id:3, nama:'Citra', kategori:'Teman',    pax:null, status:'Tidak Hadir', ucapan:'Maaf Jika Tidak Bisa Hadir' },
-    { id:4, nama:'Halim', kategori:'Teman',    pax:2, status:'Hadir',        ucapan:'Semoga Lancar' },
-    { id:5, nama:'Dewi',  kategori:'Keluarga', pax:3, status:'Hadir',        ucapan:'Bahagia Selalu' },
-    { id:6, nama:'Rudi',  kategori:'Rekan',    pax:null, status:'Menunggu',  ucapan:'' },
-    { id:7, nama:'Sari',  kategori:'Teman',    pax:2, status:'Hadir',        ucapan:'Selamat Menempuh Hidup Baru' },
-    { id:8, nama:'Hasan', kategori:'Keluarga', pax:null, status:'Tidak Hadir', ucapan:'Maaf Jika Tidak Bisa' },
-    { id:9, nama:'Lina',  kategori:'Teman',    pax:1, status:'Hadir',        ucapan:'Selamat Ya' },
-    { id:10,nama:'Doni',  kategori:'Rekan',    pax:null, status:'Menunggu',  ucapan:'' },
-    { id:11,nama:'Maya',  kategori:'Keluarga', pax:4, status:'Hadir',        ucapan:'Semoga Bahagia' },
-    { id:12,nama:'Rizky', kategori:'Teman',    pax:2, status:'Tidak Hadir',  ucapan:'Maaf Tidak Bisa Hadir' },
+  const dummyTamus = [
+    { id:1, nama:'Andi',  kategori:'Keluarga', pax:4,    status:'Hadir',        ucapan:'Selamat Ya' },
+    { id:2, nama:'Budi',  kategori:'Keluarga', pax:4,    status:'Hadir',        ucapan:'Selamat Ya' },
+    { id:3, nama:'Citra', kategori:'Teman',    pax:null, status:'Tidak Hadir',  ucapan:'Maaf Jika Tidak Bisa Hadir' },
+    { id:4, nama:'Halim', kategori:'Teman',    pax:2,    status:'Hadir',        ucapan:'Semoga Lancar' },
+    { id:5, nama:'Dewi',  kategori:'Keluarga', pax:3,    status:'Hadir',        ucapan:'Bahagia Selalu' },
+    { id:6, nama:'Rudi',  kategori:'Rekan',    pax:null, status:'Menunggu',     ucapan:'' },
+    { id:7, nama:'Sari',  kategori:'Teman',    pax:2,    status:'Hadir',        ucapan:'Selamat Menempuh Hidup Baru' },
+    { id:8, nama:'Hasan', kategori:'Keluarga', pax:null, status:'Tidak Hadir',  ucapan:'Maaf Jika Tidak Bisa' },
+    { id:9, nama:'Lina',  kategori:'Teman',    pax:1,    status:'Hadir',        ucapan:'Selamat Ya' },
+    { id:10,nama:'Doni',  kategori:'Rekan',    pax:null, status:'Menunggu',     ucapan:'' },
+    { id:11,nama:'Maya',  kategori:'Keluarga', pax:4,    status:'Hadir',        ucapan:'Semoga Bahagia' },
+    { id:12,nama:'Rizky', kategori:'Teman',    pax:2,    status:'Tidak Hadir',  ucapan:'Maaf Tidak Bisa Hadir' },
   ];
-  let nextId = 13;
-  let editingId = null;
-  const PER_PAGE = 8;
-  let currentPage = 1;
-  let filtered = [...tamus];
+
+  let tamus   = JSON.parse(localStorage.getItem('tamus') || 'null') ?? dummyTamus;
+  let nextId  = tamus.length ? Math.max(...tamus.map(t => t.id)) + 1 : 13;
+
+  // Tambah helper sync
+  function syncStorage() {
+    localStorage.setItem('tamus', JSON.stringify(tamus));
+  }
 
   /* ── RENDER ── */
   function statusBadge(s) {
@@ -101,6 +104,7 @@
   }
   function closeModal() { document.getElementById('modalBackdrop').classList.remove('open'); }
 
+  // Di saveTamu() — tambah syncStorage() sebelum closeModal()
   function saveTamu() {
     const nama     = document.getElementById('fNama').value.trim();
     const kategori = document.getElementById('fKategori').value;
@@ -110,20 +114,25 @@
     if (!nama) { alert('Nama tamu wajib diisi!'); return; }
 
     if (editingId) {
-      const idx = tamus.findIndex(x => x.id === editingId);
-      tamus[idx] = { id: editingId, nama, kategori, pax, status, ucapan };
+        const idx = tamus.findIndex(x => x.id === editingId);
+        tamus[idx] = { id: editingId, nama, kategori, pax, status, ucapan };
     } else {
-      tamus.push({ id: nextId++, nama, kategori, pax, status, ucapan });
+        tamus.push({ id: nextId++, nama, kategori, pax, status, ucapan });
     }
-    closeModal(); render();
+    syncStorage(); // ← tambah ini
+    closeModal();
+    render();
   }
 
   function editTamu(id)   { openModal(id); }
+  // Di deleteTamu() — tambah syncStorage()
   function deleteTamu(id) {
     if (!confirm('Hapus tamu ini?')) return;
     tamus = tamus.filter(x => x.id !== id);
+    syncStorage();
     render();
   }
+
 
   /* ── DOWNLOAD EXCEL (CSV) ── */
   function downloadExcel() {
