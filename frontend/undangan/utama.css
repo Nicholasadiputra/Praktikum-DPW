@@ -1,0 +1,259 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Cormorant Garamond', serif;
+  background: #fff;
+}
+
+/* =================== Navbar =================== */
+header {
+  backdrop-filter: blur(12px);
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+header div {
+  text-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+}
+
+nav a {
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+nav a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: #321E04;
+  transition: width 0.4s ease;
+}
+
+nav a:hover {
+  color: #7A5C3A;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+/*=================== Hero =================== */
+.name-top, .name-bottom {
+  text-shadow: 2px 2px 10px rgba(0,0,0,0.6);
+}
+
+/* =================== CORNER Save The Date =================== */
+.corner-tl { position: absolute; top: 0; left: 0; width: 50px; height: 50px; border-top: 2px solid #C9A96E; border-left: 2px solid #C9A96E; }
+.corner-tr { position: absolute; top: 0; right: 0; width: 50px; height: 50px; border-top: 2px solid #C9A96E; border-right: 2px solid #C9A96E; }
+.corner-bl { position: absolute; bottom: 0; left: 0; width: 50px; height: 50px; border-bottom: 2px solid #C9A96E; border-left: 2px solid #C9A96E; }
+.corner-br { position: absolute; bottom: 0; right: 0; width: 50px; height: 50px; border-bottom: 2px solid #C9A96E; border-right: 2px solid #C9A96E; }
+
+/* =================== Our Timeline =================== */
+/* Path garis */
+#tl-path {
+  fill: none;
+  stroke: #321E04;
+  stroke-width: 2px;
+  opacity: 0.65;
+}
+
+/* ── Event group ── */
+.ev-group {
+  opacity: 0;
+  transform-origin: center;
+  transform: scale(0.6);
+  transition: opacity 0.45s ease, transform 0.45s ease;
+}
+
+.ev-group.visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* ── "Our Timeline" title ── */
+#tl-title {
+  opacity: 0;
+  transition: opacity 0.8s ease;
+}
+
+#tl-title.visible {
+  opacity: 1;
+}
+
+/* ── SVG typography ── */
+.ev-heart {
+  font-family: serif;
+  font-size: 30px;
+  fill: #321E04;
+}
+
+.ev-time {
+  font-family: 'Jost', sans-serif;
+  font-weight: 400;
+  font-size: 13px;
+  fill: #321E04;
+  letter-spacing: 0.05em;
+}
+
+.ev-label {
+  font-family: 'Jost', sans-serif;
+  font-weight: 300;
+  font-size: 12px;
+  fill: #321E04;
+  letter-spacing: 0.05em;
+}
+
+.tl-heading {
+  font-family: 'Niconne', cursive;
+  font-size: 52px;
+  fill: #321E04;
+  letter-spacing: 0.05em;
+}
+
+.tracking-5 { letter-spacing: 0.05em; }
+.tracking-10 { letter-spacing: 0.1em; }
+.tracking-15 { letter-spacing: 0.15em; }
+
+/* Arch shape */
+.arch-wrapper {
+  width: 180px;
+  height: 240px;
+  border-radius: 999px 999px 0 0;
+  overflow: hidden;
+  position: relative;
+  border: 2px solid transparent;
+  background:
+    linear-gradient(#3b1f08, #3b1f08) padding-box,
+    linear-gradient(180deg, #E0A96A, #7A5C3A) border-box;
+}
+
+.arch-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+}
+
+/* Placeholder inside arch */
+.arch-placeholder {
+  width: 100%;
+  height: 100%;
+  background-color: #5a3a1a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #c9a06a;
+  font-family: 'Jost', sans-serif;
+  font-size: 13px;
+  font-weight: 300;
+}
+
+/* Aturan CSS kustom untuk smooth scroll dan elemen lainnya */
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Tambahkan aturan CSS lainnya jika diperlukan, misal untuk .corner-tl, .corner-tr, dll. */
+/* Contoh placeholder untuk elemen yang ada di HTML */
+.corner-tl {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50px;
+  height: 50px;
+  border-left: 2px solid #C9A96E;
+  border-top: 2px solid #C9A96E;
+}
+
+.corner-tr {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50px;
+  height: 50px;
+  border-right: 2px solid #C9A96E;
+  border-top: 2px solid #C9A96E;
+}
+
+.corner-bl {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 50px;
+  height: 50px;
+  border-left: 2px solid #C9A96E;
+  border-bottom: 2px solid #C9A96E;
+}
+
+.corner-br {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 50px;
+  height: 50px;
+  border-right: 2px solid #C9A96E;
+  border-bottom: 2px solid #C9A96E;
+}
+
+.ev-group {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.ev-group.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.ev-heart {
+  font-size: 24px;
+  fill: #321E04;
+}
+
+.ev-time {
+  font-family: 'Jost', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  fill: #321E04;
+}
+
+.ev-label {
+  font-family: 'Jost', sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  fill: #321E04;
+}
+
+.tl-heading {
+  font-family: 'Gilda Display', serif;
+  font-size: 36px;
+  font-weight: 400;
+  fill: #321E04;
+}
+
+.arch-wrapper {
+  width: 120px;
+  height: 160px;
+  overflow: hidden;
+  border-radius: 50% 50% 0 0;
+  position: relative;
+}
+
+.arch-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
