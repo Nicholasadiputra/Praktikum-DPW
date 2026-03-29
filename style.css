@@ -64,7 +64,7 @@ nav a:hover::after {
   opacity: 0.65;
 }
 
-/* ── Event group: hidden by default, muncul saat .visible ditambah JS ── */
+/* ── Event group ── */
 .ev-group {
   opacity: 0;
   transform-origin: center;
@@ -154,4 +154,106 @@ nav a:hover::after {
   font-family: 'Jost', sans-serif;
   font-size: 13px;
   font-weight: 300;
+}
+
+/* Aturan CSS kustom untuk smooth scroll dan elemen lainnya */
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Tambahkan aturan CSS lainnya jika diperlukan, misal untuk .corner-tl, .corner-tr, dll. */
+/* Contoh placeholder untuk elemen yang ada di HTML */
+.corner-tl {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50px;
+  height: 50px;
+  border-left: 2px solid #C9A96E;
+  border-top: 2px solid #C9A96E;
+}
+
+.corner-tr {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50px;
+  height: 50px;
+  border-right: 2px solid #C9A96E;
+  border-top: 2px solid #C9A96E;
+}
+
+.corner-bl {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 50px;
+  height: 50px;
+  border-left: 2px solid #C9A96E;
+  border-bottom: 2px solid #C9A96E;
+}
+
+.corner-br {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 50px;
+  height: 50px;
+  border-right: 2px solid #C9A96E;
+  border-bottom: 2px solid #C9A96E;
+}
+
+.ev-group {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.ev-group.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.ev-heart {
+  font-size: 24px;
+  fill: #C9A96E;
+}
+
+.ev-time {
+  font-family: 'Jost', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  fill: #321E04;
+}
+
+.ev-label {
+  font-family: 'Jost', sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  fill: #321E04;
+}
+
+.tl-heading {
+  font-family: 'Gilda Display', serif;
+  font-size: 36px;
+  font-weight: 400;
+  fill: #321E04;
+}
+
+.arch-wrapper {
+  width: 120px;
+  height: 160px;
+  overflow: hidden;
+  border-radius: 50% 50% 0 0;
+  position: relative;
+}
+
+.arch-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
 }

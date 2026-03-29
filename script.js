@@ -76,10 +76,21 @@ events.forEach(ev => {
 setTimeout(() => title.classList.add('visible'), 2750);
 function selectAttendance(val, el) {
   document.getElementById('attendance-val').value = val;
+
+  // Reset semua button ke default
   document.querySelectorAll('.attendance-btn').forEach(b => {
-      b.classList.remove('ring-2', 'ring-[#321E04]');
+    b.classList.remove('bg-green-500', 'bg-red-700', 'text-white', 'border-green-500', 'border-red-700');
+    b.classList.add('bg-transparent', 'text-[#321E04]', 'border-[#8F7D65]');
   });
-  el.classList.add('ring-2', 'ring-[#321E04]');
+
+  // Apply warna ke button yang dipilih
+  if (val === 'present') {
+    el.classList.remove('bg-transparent', 'text-[#321E04]', 'border-[#8F7D65]');
+    el.classList.add('bg-green-500', 'text-white', 'border-green-500');
+  } else {
+    el.classList.remove('bg-transparent', 'text-[#321E04]', 'border-[#8F7D65]');
+    el.classList.add('bg-red-700', 'text-white', 'border-red-700');
+  }
 }
 
 function selectCategory(val, el) {
