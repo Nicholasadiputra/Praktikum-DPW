@@ -289,72 +289,79 @@
         </svg>
     </section>
 
-    <!-- ════════════ Dress Code ════════════ -->
-    <section class="flex items-center justify-center min-h-screen">
-        <div style="position: relative; width: 1011px;">
-    
-            <!-- "Dress Code" title overlapping image zone and text panel -->
-            <div class="title-overlay">
-                <span class="dress-code-title">Dress Code</span>
-            </div>
-        
-            <div class="dress-layout">
-        
-                <!-- Image 1: Tall woman in brown suit -->
-                <div class="img-woman-tall">
-                    <div class="line-vertical"></div>
-                    <div class="line-horizontal"></div>
-                    <img src="images/woman1.png" alt="Woman in brown suit"
-                    />
-                </div>
-        
-                <!-- Image 2: Man in navy suit -->
-                <div class="img-man-navy">
-                    <img src="images/man1.png" alt="Man in navy suit"
-                    />
-                </div>
-        
-                <!-- Image 3: Woman in olive dress -->
-                <div class="img-woman-olive">
-                    <img src="images/woman2.png" alt="Woman in olive dress"
-                    />
-                </div>
-        
-                <!-- Text Panel with Image 4 at bottom -->
-                <div class="text-panel">
-                    <div class="text-content">
-                        <!-- Top label (above title area) -->
-                        <p class="formal-attire-label" style="margin-top: 4px;">Kindly Dress in Formal Attire</p>
+    <section class="relative w-full h-screen overflow-hidden" style="display:grid; grid-template-columns:320px 220px 1fr; grid-template-rows:50vh 50vh; gap:2px; background:#FFFFFF;">
+        <!-- woman1: full height (2 rows) -->
+        <div class="relative overflow-hidden" style="grid-column:1; grid-row:1/3;">
             
-                        <!-- Space for "Dress Code" title overlap (visual gap) -->
-                        <div style="height: 64px;"></div>
+            <!-- garis vertikal: 40px dari kiri -->
+            <div class="absolute top-0 bottom-0 w-px bg-white/40 z-10" style="left:40px; background: #FFFFFF;"></div>
             
-                        <!-- Description -->
-                        <p class="description-text" style="max-width: 390px;">
-                        To create a harmonious and elegant celebration, we kindly invite our guests to wear formal attire in the following color palette.
-                        </p>
+            <!-- garis horizontal: tebal sama dengan gap grid (2px), di tengah -->
+            <div class="absolute inset-x-0 z-10" style="top:50%; height:2px; background:#FFFFFF;"></div>
             
-                        <!-- Color Swatches -->
-                        <div class="palette-wrapper">
-                        <div class="swatch" style="background:#FFFFFF;"></div>
-                        <div class="swatch" style="background:#563E32;"></div>
-                        <div class="swatch" style="background:#5C5C38;"></div>
-                        <div class="swatch" style="background:#36161B;"></div>
-                        <div class="swatch" style="background:#151A20;"></div>
-                    </div>
+            <img src="images/woman1.png" class="w-full h-full object-cover"/>
+        </div>
+
+        <!-- man1: row 1, col 2 -->
+        <div class="overflow-hidden" style="grid-column:2; grid-row:1;">
+            <img src="images/man1.png" class="w-full h-full object-cover"/>
+        </div>
+
+        <!-- text panel: row 1, col 3 -->
+        <div class="flex flex-col justify-start relative overflow-hidden"
+            style="grid-column:3; grid-row:1; background:#3B2710; padding: 5vh 3vw;">
+
+            <!-- Kindly label -->
+            <p class="formal-attire-label"
+                style="color: #7A5C3A;">
+                Kindly Dress in Formal Attire
+            </p>
+
+            <!-- Dress Code title — tepat di bawah label, bukan absolute -->
+            <span style="font-family:'Niconne', cursive; font-size: clamp(40px, 4.5vw, 80px); letter-spacing: 0.05em; font-weight: 300; color: #F5ECD7; margin-top: 0.5rem; display: block;">
+                Dress Code
+            </span>
+
+            <!-- Deskripsi -->
+            <p class="description-text"
+                style="max-width: 100%; margin-top: 1.5rem; margin-bottom: 1.75rem; font-size: clamp(14px, 2.5vw, 20px);">
+                To create a harmonious and elegant celebration, we kindly invite our
+                guests to wear formal attire in the following color palette.
+            </p>
+
+            <!-- Palette -->
+            <div class="flex gap-3 justify-center"  style="max-width: 100%;">
+                <div class="w-[22px] h-[22px] rounded-[4px] p-[1.5px]" style="background: linear-gradient(135deg, #F5D6AD, #8F7D65);">
+                    <div class="w-full h-full rounded-[3px]" style="background:#FFFFFF;"></div>
                 </div>
-        
-                <!-- Image 4: Man in black suit -->
-                <div class="img-man-black">
-                    <img src="images/man2.png" alt="Man in black suit"
-                    />
+                <div class="w-[22px] h-[22px] rounded-[4px] p-[1.5px]" style="background: linear-gradient(135deg, #F5D6AD, #8F7D65);">
+                    <div class="w-full h-full rounded-[3px]" style="background:#563E32;"></div>
+                </div>
+                <div class="w-[22px] h-[22px] rounded-[4px] p-[1.5px]" style="background: linear-gradient(135deg, #F5D6AD, #8F7D65);">
+                    <div class="w-full h-full rounded-[3px]" style="background:#5C5C38;"></div>
+                </div>
+                <div class="w-[22px] h-[22px] rounded-[4px] p-[1.5px]" style="background: linear-gradient(135deg, #F5D6AD, #8F7D65);">
+                    <div class="w-full h-full rounded-[3px]" style="background:#36161B;"></div>
+                </div>
+                <div class="w-[22px] h-[22px] rounded-[4px] p-[1.5px]" style="background: linear-gradient(135deg, #F5D6AD, #8F7D65);">
+                    <div class="w-full h-full rounded-[3px]" style="background:#151A20;"></div>
                 </div>
             </div>
         </div>
-    </section
+
+        <!-- woman2: row 2, col 2 — tepat di bawah man1 -->
+        <div class="overflow-hidden" style="grid-column:2; grid-row:2;">
+            <img src="images/woman2.png" class="w-full h-full object-cover"/>
+        </div>
+
+        <!-- man2: row 2, col 3 — lebar mengisi sisa -->
+        <div class="overflow-hidden" style="grid-column:3; grid-row:2;">
+            <img src="images/man2.png" class="w-full h-full object-cover object-top"/>
+        </div>
+    </section>
 
     <section class="bg-[#f5f3ee] min-h-screen">
-    <div class="flex flex-row items-start gap-16 max-w-[860px] w-full mx-auto px-[60px] py-[80px]">
+        <div class="flex flex-row items-start gap-16 max-w-[860px] w-full mx-auto px-[60px] py-[80px]">
             <!-- Left: Text -->
             <div class="flex flex-col flex-1">
 
@@ -397,7 +404,7 @@
         </div>
     </section>
 
-    <section class="bg-[#3b1f08] min-h-screen flex flex-col items-center px-[60px] py-[60px]">
+    <section class="bg-[#321E04] flex flex-col items-center px-[60px] py-[60px]">
         <!-- Gallery Title -->
         <h1 class="font-niconne text-white text-[60px] font-normal tracking-5 mb-[50px]">
         Gallery
@@ -444,5 +451,51 @@
             </div>
         </div>
     </section>
+        <!-- Gallery section -->
+        <div class="relative w-full" style="background:#321E04;">
+
+            <!-- setengah lingkaran atas — z-10 supaya di depan foto -->
+            <div class="absolute z-10"
+                style="width:100%; height:18%; background:#321E04; border-radius:0 0 50% 50%; top:0;">
+            </div>
+
+            <!-- scroll foto — z-0 supaya di belakang -->
+            <div class="relative z-0 w-full overflow-x-auto overflow-y-hidden py-8 px-6">
+                <div class="flex gap-4" style="width: max-content;">
+                    <div style="width:220px; height:320px; flex-shrink:0; overflow:hidden;">
+                        <img src="images/foto1.png" class="w-full h-full object-cover"/>
+                    </div>
+                    <div style="width:220px; height:320px; flex-shrink:0; overflow:hidden;">
+                        <img src="images/foto2.png" class="w-full h-full object-cover"/>
+                    </div>
+                    <div style="width:220px; height:320px; flex-shrink:0; overflow:hidden;">
+                        <img src="images/foto5.png" class="w-full h-full object-cover"/>
+                    </div>
+                    <div style="width:220px; height:320px; flex-shrink:0; overflow:hidden;">
+                        <img src="images/story1.png" class="w-full h-full object-cover"/>
+                    </div>
+                    <div style="width:220px; height:320px; flex-shrink:0; overflow:hidden;">
+                        <img src="images/story2.png" class="w-full h-full object-cover"/>
+                    </div>
+                    <div style="width:220px; height:320px; flex-shrink:0; overflow:hidden;">
+                        <img src="images/dad1.jpg" class="w-full h-full object-cover"/>
+                    </div>
+                    <div style="width:220px; height:320px; flex-shrink:0; overflow:hidden;">
+                        <img src="images/dad2.jpg" class="w-full h-full object-cover"/>
+                    </div>
+                    <div style="width:220px; height:320px; flex-shrink:0; overflow:hidden;">
+                        <img src="images/mom1.jpg" class="w-full h-full object-cover"/>
+                    </div>
+                    <div style="width:220px; height:320px; flex-shrink:0; overflow:hidden;">
+                        <img src="images/mom2.jpg" class="w-full h-full object-cover"/>
+                    </div>
+                </div>
+            </div>
+
+            <!-- setengah lingkaran bawah — z-10 supaya di depan foto -->
+            <div class="absolute z-10"
+                style="width:100%; height:18%; background:#321E04; border-radius:50% 50% 0 0; bottom:0;">
+            </div>
+        </div>
 </body>
 </html>
