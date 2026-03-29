@@ -15,9 +15,41 @@
   <link href="https://fonts.googleapis.com/css2?family=Caveat+Brush&family=Dancing+Script:wght@400;700&family=Eagle+Lake&family=Grey+Qo&family=Poppins:wght@400;600&family=Work+Sans:wght@400;600&display=swap" rel="stylesheet">
 
   <!-- Jost -->
-  <link href = "https://fonts.googleapis.com/css2?family=Jost:wght@300;600&family=Gilda+Display&family=Niconne&display=swap" rel="stylesheet">
-  
-  <!-- Style CSS dan JavaScript -->
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;600&family=Gilda+Display&family=Niconne&display=swap" rel="stylesheet">
+
+  <!-- ✅ Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- ✅ Tailwind Config: daftarkan warna & font custom -->
+  <script>
+    tailwind.config = {
+      corePlugins: {
+        preflight: false,
+      },
+
+      theme: {
+        extend: {
+          colors: {
+            'brown-dark': '#321E04',
+            'gold':       '#C9A96E',
+            'brown-mid':  '#7A5C3A',
+            'cream':      '#f5f1eb',
+          },
+          fontFamily: {
+            'cormorant':  ['"Cormorant Garamond"', 'serif'],
+            'jost':       ['Jost', 'sans-serif'],
+            'belle':      ['"La Belle Aurore"', 'cursive'],
+            'imperial':   ['"Imperial Script"', 'cursive'],
+            'grey-qo':    ['"Grey Qo"', 'cursive'],
+            'gilda':      ['"Gilda Display"', 'serif'],
+            'niconne':    ['Niconne', 'cursive'],
+          },
+        }
+      }
+    }
+  </script>
+
+  <!-- Style CSS -->
   <link rel="stylesheet" href="style.css">
   <script src="script.js" defer></script>
 </head>
@@ -104,5 +136,72 @@
             <img src="images/foto4.png" alt="wedding">
         </div>
     </section>
+
+    <section class="venue-section">
+        <div class="venue-top">
+            <!-- Foto 230x306 -->
+            <div class="venue-photo">
+            <img src="images/foto5.png" alt="Couple"/>
+            </div>
+            <!-- Teks -->
+            <div class="venue-text">
+                <h2 class="venue-title">THE VENUE</h2>
+                <p class="venue-desc">
+                    We are delighted to celebrate our special day at a place filled with
+                    beauty and warmth. Surrounded by nature and loved ones, this venue
+                    will witness the beginning of our forever.
+                </p>
+                <p class="venue-where">Where Our Special Day Takes Place</p>
+                <p class="venue-address">
+                    Wedding Ceremony<br>
+                    Grand Ballroom, Ciputra's Hotel<br>
+                    Jakarta, Indonesia
+                </p>
+                <p class="venue-save">Save Your Seat</p>
+            </div>
+        </div>
+
+        <!-- Map embed -->
+        <div class="venue-map-wrap">
+            <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.3!2d106.7902!3d-6.1752!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f6e0b4a4f5f5%3A0x1234567890abcdef!2sGrand%20Ballroom%20Ciputra%20Hotel%20Jakarta!5e0!3m2!1sen!2sid!4v1234567890"
+            allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </div>
+
+        <!-- Link -->
+        <a class="venue-maps-link"
+            href="https://maps.google.com/?q=Grand+Ballroom+Ciputra+Hotel+Jakarta"
+            target="_blank" rel="noopener noreferrer">
+            Open on Google Maps
+        </a>
+    </section>
+
+    <section class="countdown-section">
+        <p class="countdown-title">Until our wedding day</p>
+
+        <div class="countdown-wrap">
+            <div class="countdown-item">
+            <span class="countdown-num" id="cd-days">000</span>
+            <span class="countdown-label">Days</span>
+            </div>
+            <span class="countdown-sep">:</span>
+            <div class="countdown-item">
+            <span class="countdown-num" id="cd-hours">00</span>
+            <span class="countdown-label">Hours</span>
+            </div>
+            <span class="countdown-sep">:</span>
+            <div class="countdown-item">
+            <span class="countdown-num" id="cd-minutes">00</span>
+            <span class="countdown-label">Minutes</span>
+            </div>
+            <span class="countdown-sep">:</span>
+            <div class="countdown-item">
+            <span class="countdown-num" id="cd-seconds">00</span>
+            <span class="countdown-label">Seconds</span>
+            </div>
+        </div>
+    </section>
+
 </body>
 </html>
