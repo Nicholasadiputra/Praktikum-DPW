@@ -1,13 +1,16 @@
+<?php
+
+require_once __DIR__ . '/auth_check.php';
+?>
 <!DOCTYPE html>
 <html lang="id">
 <head>
   <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Nicholas & Nahda — Data Tamu</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
-    <link rel="stylesheet" href="dataTamu.css"/>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="dataTamu.js" defer></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Nicholas & Nahda — Data Tamu</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="dataTamu.css"/>
+  <script src="dataTamu.js" defer></script>
 </head>
 <body>
 
@@ -26,13 +29,13 @@
       </svg>
       Dashboard
     </a>
-    <a class="nav-item" href="editLanding.html">
+    <a class="nav-item" href="editLanding.php">
       <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
         <path d="M12 20h9M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/>
       </svg>
       Edit Landing Page
     </a>
-    <a class="nav-item active" href="dataTamu.html">
+    <a class="nav-item active" href="dataTamu.php">
       <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
         <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/>
         <circle cx="9" cy="7" r="4"/>
@@ -40,13 +43,20 @@
       </svg>
       Data Tamu
     </a>
+    <a class="nav-item" href="dataAdmin.php">
+      <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <circle cx="12" cy="8" r="4"/>
+        <path d="M20 21a8 8 0 10-16 0"/>
+      </svg>
+      Data Admin
+    </a>
   </nav>
-  <div class="sidebar-logout">
+  <a href="logout.php" class="sidebar-logout">
     <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
       <path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4M16 17l5-5-5-5M21 12H9"/>
     </svg>
     Keluar
-  </div>
+  </a>
 </aside>
 
 <main class="main">
@@ -79,7 +89,6 @@
         <tbody id="tamuBody"></tbody>
       </table>
     </div>
-
     <div class="pagination" id="pagination"></div>
   </div>
 </main>
@@ -92,24 +101,25 @@
       <label>Nama Tamu</label>
       <input type="text" id="fNama" placeholder="Contoh: Andi Saputra" />
     </div>
+    <!-- GANTI bagian select Kategori -->
     <div class="form-group">
       <label>Kategori</label>
-      <select id="fKategori">
-        <option value="Keluarga">Keluarga</option>
-        <option value="Teman">Teman</option>
-        <option value="Rekan">Rekan</option>
+      <select id="fKategori" onchange="autoSetPax(this.value)">
+        <option value="Family">Family</option>
+        <option value="Friend">Friend</option>
       </select>
     </div>
-    <div class="form-group">
+
+    <div class="form-group" id="paxGroup">
       <label>Pax</label>
-      <input type="number" id="fPax" placeholder="Jumlah tamu" min="1" />
+      <input type="number" id="fPax" readonly />
     </div>
+
     <div class="form-group">
       <label>Status</label>
-      <select id="fStatus">
+      <select id="fStatus" onchange="togglePaxByStatus(this.value)">
         <option value="Hadir">Hadir</option>
         <option value="Tidak Hadir">Tidak Hadir</option>
-        <option value="Menunggu">Menunggu Respon</option>
       </select>
     </div>
     <div class="form-group">

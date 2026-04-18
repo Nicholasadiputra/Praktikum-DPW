@@ -94,11 +94,16 @@ function selectAttendance(val, el) {
 }
 
 function selectCategory(val, el) {
-  document.getElementById('category-val').value = val;
-  document.querySelectorAll('.category-btn').forEach(b => {
-      b.classList.remove('bg-[#8F7D65]/40', 'text-white');
-  });
-  el.classList.add('bg-[#8F7D65]/40');
+    document.getElementById('category-val').value = val;
+    
+    // Tentukan kuota default
+    const paxValue = (val === 'family') ? 4 : 2;
+    document.getElementById('pax-val').value = paxValue;
+
+    document.querySelectorAll('.category-btn').forEach(b => {
+        b.classList.remove('bg-[#8F7D65]/40', 'text-white');
+    });
+    el.classList.add('bg-[#8F7D65]/40');
 }
 
 document.getElementById('rsvp-form').addEventListener('submit', async function(e) {
@@ -109,6 +114,9 @@ document.getElementById('rsvp-form').addEventListener('submit', async function(e
     const attendance = document.getElementById('attendance-val').value;
     const category = document.getElementById('category-val').value;
     const message = this.message.value.trim();
+    
+    // Ambil nilai pax dari hidden input
+    let pax = document.getElementById('pax-val').value;
 
     if (!nama || !attendance || !category) {
         status.textContent = 'Mohon lengkapi semua field.';
@@ -117,11 +125,16 @@ document.getElementById('rsvp-form').addEventListener('submit', async function(e
         return;
     }
 
-    // Persiapkan data untuk dikirim ke PHP
+    // Set nilai ke 0 jika tidak hadir
+    if (attendance !== 'present') {
+        pax = 0; 
+    }
+
     const formData = new FormData();
     formData.append('nama', nama);
     formData.append('kehadiran', attendance === 'present' ? 'Hadir' : 'Tidak Hadir');
     formData.append('kategori', category === 'family' ? 'Keluarga' : 'Teman');
+    formData.append('pax', pax); 
     formData.append('pesan', message);
 
     try {
@@ -136,7 +149,7 @@ document.getElementById('rsvp-form').addEventListener('submit', async function(e
             status.className = 'text-center text-sm font-jost text-green-700 mt-4';
             this.reset();
             
-            // Reset tampilan tombol
+            // Reset tampilan dan nilai hidden
             document.querySelectorAll('.attendance-btn, .category-btn').forEach(b => {
                 b.classList.remove('bg-green-500', 'bg-red-700', 'text-white', 'border-green-500', 'border-red-700', 'bg-[#8F7D65]/40');
                 if (b.classList.contains('attendance-btn')) {
@@ -145,6 +158,7 @@ document.getElementById('rsvp-form').addEventListener('submit', async function(e
             });
             document.getElementById('attendance-val').value = '';
             document.getElementById('category-val').value = '';
+            document.getElementById('pax-val').value = '';
         } else {
             status.textContent = result.message;
             status.className = 'text-center text-sm font-jost text-red-600 mt-4';

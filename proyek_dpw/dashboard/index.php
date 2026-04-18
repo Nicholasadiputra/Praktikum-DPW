@@ -1,3 +1,28 @@
+<?php
+// ============================================================
+//  dashboard/index.php — Dashboard utama
+//  Statistik diambil langsung dari database → sinkron dengan dataTamu
+// ============================================================
+require_once __DIR__ . '/auth_check.php';
+require_once __DIR__ . '/config/database.php';
+
+$pdo = getDB();
+
+// Ambil statistik dari tabel tamu
+$stats = $pdo->query("
+    SELECT
+        COUNT(*)                          AS total,
+        SUM(status = 'Hadir')             AS hadir,
+        SUM(status = 'Tidak Hadir')       AS tidak_hadir,
+        SUM(status = 'Menunggu')          AS menunggu
+    FROM tamu
+")->fetch();
+
+$total       = (int)($stats['total']       ?? 0);
+$hadir       = (int)($stats['hadir']       ?? 0);
+$tidakHadir  = (int)($stats['tidak_hadir'] ?? 0);
+$menunggu    = (int)($stats['menunggu']    ?? 0);
+?>
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -10,32 +35,29 @@
     <script src="dashboard.js" defer></script>
 </head>
 <body>
-<!-- Hamburger -->
+
 <button class="hamburger" id="hamburger" aria-label="Menu">
   <span></span><span></span><span></span>
 </button>
-
-<!-- Overlay -->
 <div class="overlay" id="overlay"></div>
 
-<!-- Sidebar -->
 <aside class="sidebar" id="sidebar">
   <div class="sidebar-logo">NICHOLAS<br>&amp;<br>NAHDA</div>
   <nav class="sidebar-nav">
-    <a class="nav-item active" href="index.php" data-page="dashboard">
+    <a class="nav-item active" href="index.php">
       <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
         <rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/>
         <rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/>
       </svg>
       Dashboard
     </a>
-    <a class="nav-item" href="editLanding.html" data-page="landing">
+    <a class="nav-item" href="editLanding.php">
       <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
         <path d="M12 20h9M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/>
       </svg>
       Edit Landing Page
     </a>
-    <a class="nav-item" href="dataTamu.html" data-page="tamu">
+    <a class="nav-item" href="dataTamu.php">
       <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
         <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/>
         <circle cx="9" cy="7" r="4"/>
@@ -43,16 +65,22 @@
       </svg>
       Data Tamu
     </a>
+    <a class="nav-item" href="dataAdmin.php">
+      <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <circle cx="12" cy="8" r="4"/>
+        <path d="M20 21a8 8 0 10-16 0"/>
+      </svg>
+      Data Admin
+    </a>
   </nav>
-  <div class="sidebar-logout">
+  <a href="logout.php" class="sidebar-logout">
     <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
       <path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4M16 17l5-5-5-5M21 12H9"/>
     </svg>
     Keluar
-  </div>
+  </a>
 </aside>
 
-<!-- Main Content -->
 <main class="main">
   <h1 class="page-title">Dashboard</h1>
 
@@ -61,7 +89,7 @@
     <div class="stat-card">
       <div class="stat-info">
         <span class="stat-label">Total Tamu Terdaftar</span>
-        <span class="stat-value" id="totalTamu">100</span>
+        <span class="stat-value" id="totalTamu"><?= $total ?></span>
       </div>
       <div class="stat-icon blue">
         <svg width="26" height="26" fill="none" stroke="#5b7ac4" stroke-width="2" viewBox="0 0 24 24">
@@ -74,7 +102,7 @@
     <div class="stat-card">
       <div class="stat-info">
         <span class="stat-label">Konfirmasi Hadir</span>
-        <span class="stat-value" id="konfHadir">83</span>
+        <span class="stat-value" id="konfHadir"><?= $hadir ?></span>
       </div>
       <div class="stat-icon green">
         <svg width="26" height="26" fill="none" stroke="#3a9e6a" stroke-width="2" viewBox="0 0 24 24">
@@ -86,7 +114,7 @@
     <div class="stat-card">
       <div class="stat-info">
         <span class="stat-label">Konfirmasi Tidak Hadir</span>
-        <span class="stat-value" id="konfTidak">10</span>
+        <span class="stat-value" id="konfTidak"><?= $tidakHadir ?></span>
       </div>
       <div class="stat-icon red">
         <svg width="26" height="26" fill="none" stroke="#e05a52" stroke-width="2" viewBox="0 0 24 24">
@@ -97,12 +125,12 @@
     </div>
   </div>
 
-  <!-- Bottom row: waiting + donut -->
+  <!-- Bottom row: menunggu + donut -->
   <div class="bottom-row">
     <div class="stat-card waiting">
       <div class="stat-info">
         <span class="stat-label">Menunggu Respon</span>
-        <span class="stat-value" id="menunggu">7</span>
+        <span class="stat-value" id="menunggu"><?= $menunggu ?></span>
       </div>
       <div class="stat-icon orange">
         <svg width="26" height="26" fill="none" stroke="#b36200" stroke-width="2" viewBox="0 0 24 24">
@@ -116,21 +144,21 @@
       <div class="donut-wrap">
         <canvas id="donutChart" width="140" height="140"></canvas>
         <div class="donut-label">
-          <div class="dnum" id="donutTotal">100</div>
+          <div class="dnum" id="donutTotal"><?= $total ?></div>
           <div class="dtxt">Tamu Terdaftar</div>
         </div>
       </div>
       <div class="donut-legend">
         <div class="legend-item">
-          <span class="legend-dot green" id="pctHadir">83%</span>
+          <span class="legend-dot green" id="pctHadir"><?= $total > 0 ? round($hadir / $total * 100) : 0 ?>%</span>
           <span>Konfirmasi Hadir</span>
         </div>
         <div class="legend-item">
-          <span class="legend-dot red" id="pctTidak">10%</span>
+          <span class="legend-dot red" id="pctTidak"><?= $total > 0 ? round($tidakHadir / $total * 100) : 0 ?>%</span>
           <span>Konfirmasi Tidak Hadir</span>
         </div>
         <div class="legend-item">
-          <span class="legend-dot orange" id="pctMenunggu">7%</span>
+          <span class="legend-dot orange" id="pctMenunggu"><?= $total > 0 ? round($menunggu / $total * 100) : 0 ?>%</span>
           <span>Menunggu Respon</span>
         </div>
       </div>

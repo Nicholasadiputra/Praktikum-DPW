@@ -3,27 +3,33 @@ session_start();
 require 'koneksi.php';
 header('Content-Type: application/json');
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $user = $conn->real_escape_string($_POST['user']);
-    $pass = $_POST['pass'];
+// Tamu langsung masuk tanpa cek database
+if (isset($_POST['guest'])) {
+    $_SESSION['login'] = true;
+    $_SESSION['role']  = 'tamu';
+    echo json_encode(["status" => "success", "role" => "tamu", "redirect" => "utama.php"]);
+    exit;
+}
 
-    $sql = "SELECT * FROM admin WHERE username = '$user'";
-    $result = $conn->query($sql);
+// Admin → cek database
+$username = trim($conn->real_escape_string($_POST['user'] ?? ''));
+$password = $_POST['pass'] ?? '';
 
-    if ($result->num_rows > 0) {
-        $row = $result->fetch_assoc();
-        // Gunakan password_verify jika password di database di-hash, jika plaintext gunakan ==
-        if (password_verify($pass, $row['password'])) { 
-            $_SESSION['login'] = true;
-            $_SESSION['username'] = $user;
-            echo json_encode(["status" => "success"]);
-        } else {
-            echo json_encode(["status" => "error", "message" => "Password salah"]);
-        }
+$sql    = "SELECT * FROM users WHERE username = '$username' AND role = 'admin' LIMIT 1";
+$result = $conn->query($sql);
+
+if ($result && $result->num_rows > 0) {
+    $row = $result->fetch_assoc();
+    if (password_verify($password, $row['password'])) {
+        $_SESSION['login']    = true;
+        $_SESSION['user_id']  = $row['id'];
+        $_SESSION['username'] = $row['username'];
+        $_SESSION['role']     = 'admin';
+        echo json_encode(["status" => "success", "role" => "admin", "redirect" => "../dashboard/index.php"]);
     } else {
-        echo json_encode(["status" => "error", "message" => "User tidak ditemukan"]);
+        echo json_encode(["status" => "error", "message" => "Password salah."]);
     }
+} else {
+    echo json_encode(["status" => "error", "message" => "Username tidak ditemukan."]);
 }
 $conn->close();
-
-?>

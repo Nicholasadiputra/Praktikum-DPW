@@ -600,25 +600,31 @@ $kota = "Jakarta, Indonesia";
                 <input type="hidden" name="attendance" id="attendance-val">
             </div>
 
+            <input type="hidden" name="category" id="category-val">
+            <input type="hidden" name="pax" id="pax-val">
+            
             <!-- Category -->
             <div class="flex flex-col gap-2">
                 <label class="font-jost font-semibold text-[#321E04] text-[18px] tracking-[0.25em] uppercase">
                     Category
                 </label>
                 <div class="flex gap-4">
-                    <!-- FAMILY -->
                     <button type="button" onclick="selectCategory('family', this)"
                         class="category-btn flex-1 py-4 font-jost font-normal text-[#321E04] text-[14px] tracking-[0.15em] uppercase rounded-md border border-[#8F7D65] bg-transparent transition-all duration-300 hover:bg-[#8F7D65]/20">
-                        Family
+                        Family (4 Pax)
                     </button>
-                    <!-- FRIENDS -->
                     <button type="button" onclick="selectCategory('friends', this)"
                         class="category-btn flex-1 py-4 font-jost font-normal text-[#321E04] text-[14px] tracking-[0.15em] uppercase rounded-md border border-[#8F7D65] bg-transparent transition-all duration-300 hover:bg-[#8F7D65]/20">
-                        Friends
+                        Friends (2 Pax)
                     </button>
                 </div>
+                
+                <p id="pax-display" class="font-jost text-[14px] text-[#321E04] mt-1 hidden">
+                    Quota: <span id="pax-count" class="font-bold">-</span> Pax
+                </p>
+
                 <input type="hidden" name="category" id="category-val">
-            </div>
+                <input type="hidden" name="pax" id="pax-val"> </div>
 
             <!-- Message -->
             <div class="flex flex-col gap-2">

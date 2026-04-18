@@ -1,81 +1,61 @@
-// 1. Inisialisasi Navigasi Smooth Scroll
+// 1. Smooth Scroll ke #login
 document.querySelectorAll('a[href="#login"]').forEach(a => {
     a.addEventListener('click', e => {
         e.preventDefault();
-        const target = document.getElementById('login');
-        if (target) {
-            target.scrollIntoView({ behavior: 'smooth' });
-        }
+        document.getElementById('login')?.scrollIntoView({ behavior: 'smooth' });
     });
 });
 
-// 2. Fungsi Login dan Aktivasi Multimedia
+// 2. Fungsi Login
 async function doLogin() {
-    const user = document.getElementById('inputUser').value;
-    const pass = document.getElementById('inputPass').value;
-    const music = document.getElementById('bgMusic');
+    const user = document.getElementById('inputUser').value.trim();
+    const pass = document.getElementById('inputPass').value.trim();
 
-    if (user.trim() !== "" && pass.trim() !== "") {
+    // Kalau username = admin, cek ke database
+    if (user === 'admin') {
         const formData = new FormData();
         formData.append('user', user);
         formData.append('pass', pass);
 
         try {
-            const response = await fetch('proses_login.php', {
-                method: 'POST',
-                body: formData
-            });
-            
-            // --- BAGIAN DEBUGGING MULAI ---
-            const rawText = await response.text(); // Baca aslinya sebagai teks dulu
-            console.log("Balasan dari server:", rawText); // Tampilkan di console F12
-            
-            const result = JSON.parse(rawText); // Baru ubah ke JSON
-            // --- BAGIAN DEBUGGING SELESAI ---
-
+            const response = await fetch('proses_login.php', { method: 'POST', body: formData });
+            const result   = await response.json();
             if (result.status === 'success') {
-                if (music) {
-                    music.play().then(() => {
-                        sessionStorage.setItem('musicPlaying', 'true');
-                    }).catch(error => {
-                        sessionStorage.setItem('musicPlaying', 'true');
-                    });
-                }
-                setTimeout(() => {
-                    window.location.href = "utama.php";
-                }, 150);
+                window.location.href = result.redirect;
             } else {
-                alert(result.message);
+                alert(result.message ?? 'Login gagal.');
                 triggerShake();
             }
         } catch (error) {
-            console.error("Detail Error:", error); // Tampilkan error aslinya
-            alert('Gagal memproses data server. Cek Console (F12).');
+            alert('Gagal memproses. Cek Console (F12).');
         }
-    } else {
-        triggerShake();
-        document.getElementById('inputUser').focus();
+        return;
     }
+
+    // Selain admin → langsung masuk sebagai tamu
+    const fd = new FormData();
+    fd.append('guest', '1');
+    const res = await fetch('proses_login.php', { method: 'POST', body: fd });
+    const text = await res.text();
+    console.log('Response tamu:', text); // tambah ini sementara
+    window.location.href = 'utama.php';
 }
 
 function triggerShake() {
-    const loginGlass = document.querySelector('.login__glass');
-    if (loginGlass) {
-        loginGlass.classList.add('shake');
-        setTimeout(() => loginGlass.classList.remove('shake'), 400);
-    }
+    const el = document.querySelector('.login__glass');
+    if (!el) return;
+    el.classList.add('shake');
+    setTimeout(() => el.classList.remove('shake'), 400);
 }
 
-// 3. Listener Tombol Enter pada Input Form
-document.querySelectorAll('.login__input').forEach(function(el) {
-    el.addEventListener('keydown', function(e) {
-        if (e.key === 'Enter') doLogin();
-    });
+// 3. Enter pada input → login
+document.querySelectorAll('.login__input').forEach(el => {
+    el.addEventListener('keydown', e => { if (e.key === 'Enter') doLogin(); });
 });
 
-// 4. Kontrol Tombol Musik Melayang (Music Toggle)
-const music = document.getElementById('bgMusic');
-const musicBtn = document.getElementById('musicToggle');
+// 4. Kontrol musik melayang
+const music     = document.getElementById('bgMusic');
+const musicBtn  = document.getElementById('musicToggle');
 const musicIcon = document.getElementById('musicIcon');
 
 if (musicBtn && music) {
@@ -94,15 +74,9 @@ if (musicBtn && music) {
     });
 }
 
-// 5. Scroll Reveal Animation (Intersection Observer)
-const revealObserver = new IntersectionObserver(function(entries) {
-    entries.forEach(function(entry) {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-        }
-    });
+// 5. Scroll Reveal
+const revealObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
 }, { threshold: 0.12 });
 
-document.querySelectorAll('.reveal').forEach(function(el) {
-    revealObserver.observe(el);
-});
+document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
